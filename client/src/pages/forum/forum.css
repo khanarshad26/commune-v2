@@ -1,0 +1,169 @@
+.forumContainer {
+    display: flex;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+.forumWrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    /* width: 75%; */
+    /* flex: 50%; */
+    text-align: left;
+    border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  padding: 20px;
+}
+
+.forumTag {
+    display: flex;
+    flex-direction: column;
+    /* flex: 50%; */
+    margin: 20px;
+    width: 25%;
+    text-align: left;
+    border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  padding: 20px;
+  min-height: 70vh;
+}
+
+.forumHeading {
+    font-size: large;
+    font-weight: 400;
+}
+
+.tagHeading {
+    font-size: large;
+    font-weight: 400;
+}
+
+.hrform {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.tags{
+    display: flex;
+}
+
+.tag {
+  margin-top: 20px;
+  margin-left: 10px;
+  font-size: medium;
+  font-weight: 400;
+  border: solid 0px #0077b6;
+  padding: 8px 15px;
+  color: black;
+  max-width: fit-content;
+  background-color: rgb(235, 229, 229);
+  /* border-radius: 20px; */
+}
+
+.searchbar1 {
+    width: 80%;
+    height: 35px;
+    /* background-color: grey; */
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border: solid 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .searchIcon {
+    font-size: 20px !important;
+    margin-left: 10px;
+    color: black;
+  }
+  
+  .searchInput {
+    border: none;
+    width: 70%;
+  }
+  
+  .searchInput:focus {
+    outline: none;
+  }
+
+  .forumQuestions {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .forumQuestion {
+     display: flex;
+     border: solid 1px rgb(224, 221, 221);
+     margin: 5px;
+     padding: 10px;
+  }
+
+.questioneerImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    padding: 10px 15px 0 0;
+
+}
+
+
+
+.questionText {
+    font-size: medium;
+    font-weight: 300;
+}
+
+.questioneerInfo {
+  display: flex;
+
+}
+
+.questioneerName {
+  font-size: small;
+  font-weight: 400;
+  padding: 5px ;
+}
+
+.desc {
+  font-size: small;
+  font-weight: 400;
+  padding: 5px ;
+}
+
+.forumLeftside {
+  display: flex;
+  flex-direction: column;
+}
+
+.makeSure {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.input2 {
+  width: 50%;
+  height: 2.5em;
+    width :auto;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+.input3 {
+  width: 50%;
+  height: 6em;
+    width :auto;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+.level1 {
+  font-size: 15px;
+    font-weight: 300;
+    padding: 5px 0;
+}

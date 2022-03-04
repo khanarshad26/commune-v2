@@ -1,0 +1,6 @@
+Heading text background-color ---- #e2e6f6
+color: #3d5a80;
+eventThumbnailEvent  background-color: #98c1d9;
+
+home
+flex : 3 5 3.5

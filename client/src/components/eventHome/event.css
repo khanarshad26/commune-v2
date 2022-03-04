@@ -1,0 +1,17 @@
+.eventContainer {
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 4;
+    width: auto;
+}
+
+.eventText {
+     font-weight: 300;
+     padding-bottom: 10px;
+} 
+
+.thumbnailEvent {
+    width: 100%;
+    border-radius: 15px;
+}

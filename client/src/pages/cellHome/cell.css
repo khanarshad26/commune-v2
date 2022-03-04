@@ -1,0 +1,399 @@
+.instituteAdminContainer{
+    display: flex;
+}
+
+.clubHome{
+    display: flex;
+    width: 95%;
+}
+
+
+.instituteRightbar{
+    display: flex;
+    flex-direction: column;
+    flex: 8.5;
+}
+
+.instituteclubPagecontainer{
+    align-items: center;  
+    background-color: #F8F0FB;
+}
+
+.instituteLiveICON{
+    width: 20px;
+}
+
+.instituteliveOption{
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 50px;
+    left: 90%;
+    width: 10%;
+    text-decoration:none;
+}
+.instituteprofileCover{
+    display: flex;
+    flex-direction: column;
+    margin-top: -50px;
+}
+.institutetext{
+    color: #217de7;
+    font-weight: 550;
+}
+.profileCoverImgInstitute{
+   width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    padding-top: 50px;
+}
+.instituteprofile{
+    display: flex;
+}
+.instituteName{
+    display: flex;
+    flex-direction: column;
+    font-family: system-ui;
+    font-weight: 700;
+}
+.instituteprofileUserImg{
+    width: 150px;
+    border-radius: 76px;
+    margin-left: 25px;
+    margin-top: -45px;
+}
+
+.cellName{
+    font-size: 35px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+
+.cellUserId{
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.instituteclubType{
+    font-weight: 300;
+}
+
+
+.instituteprofileLeft{
+    display: flex;
+    /* width: 50%; */
+}
+.institutemessage{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    
+    margin-bottom: 0px;
+}
+.institutemessageIcon{
+    width: 18px;
+    margin-bottom: 0px;
+}
+.institutemessageButton{
+    border-radius: 15px;
+    background-color: #2074e4;
+    width: 40%;
+    align-items: center;
+    margin-left: 45%;
+    font-size: large;
+}
+.institutenote{
+    margin-right: 43px;
+    margin-left: 46%;
+}
+.institutemeSSage{
+    margin-bottom: 5px;
+    
+}
+.instituteaboutleftList{
+    list-style: none;
+    
+    display: flex;
+}
+.instituteaboutleftList li{
+    text-decoration: none;
+    font-style: normal;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: solid #00000073 0px;
+    background-color: #a6abaf17;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.institutemore{
+    border:none;
+    width: 60px;
+    margin-top: 2px;
+    background-color: inherit;
+}
+.instituteaboutLeft{
+    width: 50%;
+}
+.institutefollow{
+    width: 50%;
+    margin-right: 5px;
+}
+.instituteabout{
+    display: flex;
+    margin: 10px 0;
+}
+.institutefollowButton{
+    margin-left: 50%;
+    width: 30%;
+    border-radius: 25px;
+    background-color: #98dce7;
+    font-size: 18px;
+    margin-top: 20px;
+    border: none;
+}
+
+.instituteclubBottom{
+    display: flex;
+    /* margin: 0px 10%; */
+}
+.instituteclubBottomLeft{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    background-color: white;
+    margin-top: 20px;
+}
+.instituteclubBottomRight{
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    background-color: white;
+}
+.instituteIcons{
+    width: 20px;
+    margin-left: 10px;
+}
+.institutelikeIcons{
+    width: 40px;
+}
+.clubAboutSections a{
+text-decoration: none;
+}
+.instituteclubAboutSpan{
+    align-self: center;
+}
+.institutePhotos{
+    width: 100%;
+}
+.instituteclubBottomRight{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+.instituteclubShare{
+    min-height: 100px;
+}
+
+
+
+
+/* ______________About Page____________________ */
+
+
+.clubPagecontainer{
+    align-items: center;
+    background-color: #F8F0FB;
+}
+.clubTop{
+    background-color: #ffffff;
+    margin: 0px 10%;
+}
+.profileCover{
+    display: flex;
+    flex-direction: column;
+}
+.profileCoverImg{
+   width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+}
+.profile{
+    display: flex;
+}
+.Name{
+    display: flex;
+    flex-direction: column;
+    font-family: system-ui;
+    font-weight: 700;
+}
+.profileUserImg{
+    width: 150px;
+    border-radius: 76px;
+    margin-left: 25px;
+    margin-top: -45px;
+}
+.clubaName{
+    font-size: 20px;
+}
+.UserId{
+  margin-left: 0px;
+}
+.profileLeft{
+    display: flex;
+    width: 50%;
+}
+.message{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    
+    margin-bottom: 0px;
+}
+.messageIcon{
+    width: 18px;
+    margin-bottom: 0px;
+}
+.messageButton{
+    border-radius: 15px;
+    background-color: #2074e4;
+    width: 40%;
+    align-items: center;
+    margin-left: 45%;
+    font-size: large;
+}
+.note{
+    margin-right: 43px;
+    margin-left: 46%;
+}
+.meSSage{
+    margin-bottom: 5px;
+    
+}
+.aboutleftList{
+    list-style: none;
+    
+    display: flex;
+}
+.aboutleftList li a{
+    text-decoration:none;
+    font-style: normal;
+}
+.more{
+    border:none;
+    width: 60px;
+    margin-top: 2px;
+    background-color: inherit;
+}
+.aboutLeft{
+    width: 50%;
+}
+.follow{
+    width: 50%;
+    margin-right: 5px;
+}
+.about{
+    display: flex;
+}
+.followButton{
+    margin-left: 50%;
+    width: 30%;
+    border-radius: 25px;
+    background-color: #85e585;
+    font-size: 15px;
+}
+.aboutBottom{
+   padding-top: 25px;
+    width: 50%;
+    margin: auto;
+    
+    background-color: white;
+    
+}
+.genInfospan{
+    margin-top: -20px;
+    margin: 5px;
+    padding: 0px;
+}
+.genInfo{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    /* align-items: center; */
+    margin: 5px;
+    padding: 5px;
+}
+.genInfoIcons{
+    width: 20px;
+    /* margin: 5px; */
+    padding: 5px 5px 5px 0;
+}
+.people{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 0px;
+}
+.peopleInfo{
+    display: flex;
+    margin: 5px;
+    padding: 0px;
+ 
+}
+.genInfoPics{
+    width: 27px;
+    border-radius: 65px;
+    margin: 5px 5px 5px -4px;
+    padding: 0px;
+}
+.peopleRight{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 0px;
+}
+.peoplePosition{
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* margin: -5px 5px 5px 5px; */
+    padding: 0px;
+}
+.ContactInfo{
+    margin: 30px 5px 5px 5px;
+}
+.conInfo{
+    display: flex;
+    flex-direction: column;
+    margin: -25px 5px 5px 5px;
+}
+.conInfoRight{
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    padding: 0px;
+}
+
+
+
+.conInfoRightPhone {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    padding: 0px;
+}
+
+.socialMedia{
+    margin-top: 20px;
+}
+.SocialmediaIcons{
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    padding: 0px;
+}
+.Header{
+    font-weight: 550;
+    font-family: cursive;
+    margin: 5px;
+    padding: 0px;
+}

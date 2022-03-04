@@ -1,0 +1,76 @@
+.educationCardContainer{
+    display: flex;
+    /* flex-direction: column; */
+    border-top: 1px solid grey;
+    padding: 5px 0;
+}
+
+.educationImage{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.educationCardContainerRight{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.degree{
+    font-size: larger;
+}
+
+.institution{
+    font-size: medium;
+    font-weight: 300;
+}
+
+.addEducationContainer{
+    padding: 20px 20px 20px 10px;
+    margin: 10px;
+    border: 0.5px solid gray;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.fullSection{
+    padding-left: 10px;
+}
+
+.halfSection{
+    display: flex;
+    padding-left: 10px;
+}
+
+.educationTextarea{
+    width: 100%;
+    /* height : 100px !important; */
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.halfInputContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 20px;
+    width: 40%;
+    margin-right: auto;
+}
+
+.currentlyAttend{
+    padding: 10px 0;
+}
+
+.chechboxEducation{
+    padding-right: 5px;
+}
+
+.currentText{
+    padding: 0 5px;
+    font-size: small;
+    font-weight: 400;
+}

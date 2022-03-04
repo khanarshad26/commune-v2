@@ -1,0 +1,146 @@
+.post {
+  width: 100%;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  margin: 20px 0;
+}
+
+.postWrapper {
+  padding: 10px;
+}
+
+.postTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.postTopLeft {
+  display: flex;
+  align-items: center;
+}
+
+.postProfileImg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.postUsername {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 10px;
+}
+
+.postDate{
+    font-size: 12px;
+    margin: 0 10px;
+    /* align-self: center; */
+}
+
+.postCenter{
+    margin: 20px 0;
+}
+
+.postImg{
+    margin-top: 20px;
+    width: 100%;
+    max-height: 300px;
+    /* object-fit: contain; */
+}
+
+.postBottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.postBottomLeft{
+    display: flex;
+    align-items: center;   
+}
+
+.likeIcon{
+    width: 20px;
+    /* height: 24px; */
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.postLikeCounter{
+    font-size: 15px;
+}
+
+.postCommentText{
+    cursor: pointer;
+    border-bottom: 1px dashed gray;
+    font-size: 15px;
+}
+
+/* ____________________________ */
+
+.shareBottom {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  /* margin-top: 10px; */
+}
+
+.shareOptions{
+    display: flex;
+    margin: 15px;
+    align-self: center;
+    margin-right : -1;
+}
+
+.shareOption{
+    display: flex;
+    /* flex : 2; */
+    align-items: center;
+    margin-left: 1vw ;
+    margin-right: 1vw ;
+    cursor: pointer;
+}
+
+.shareIcon{
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.shareOptionText{
+    font-size: 16px;
+    font-weight: 300;
+    margin-right: 15px;
+}
+
+.hrPost {
+  margin-top: 3px;
+}
+
+.uppermiddle {
+  display: flex;
+  flex-direction: column;
+}
+
+.commentInput {
+  width: 80%;
+  font-size: medium;
+  height: 30px;
+  border-radius: 30px;
+  border-width: 0.5px;
+}
+
+.commentProfileImg{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.commentHeading{
+  margin-bottom: 10px;
+}

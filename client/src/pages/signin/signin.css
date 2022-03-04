@@ -1,0 +1,107 @@
+.signin {
+    margin: auto;
+    text-align: center;
+    align-items: center;
+}
+
+.logoText2 {
+    
+    margin-top: 15px;
+    margin-bottom: 5%;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    color : #0077b6;
+}
+
+.signupBox {
+  width: 26%;
+  /* height: 170px; */
+  padding: 20px;
+  /* text-align: center; */
+  border-radius: 10px;
+  /* -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68); */
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 20px ;
+}
+
+.label {
+    font-size: 13px;
+    font-weight: 300;
+    padding: 5px 0;
+}
+
+.input {
+    height: 2em;
+    width :auto;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+.agreeTerms {
+    font-size:smaller;
+    font-weight: 250;
+    
+}
+
+.submitBtn {
+    margin: 1em;
+    border: solid 0px black;
+    border-radius: 30px;
+    padding: 15px 40%;
+    font-size: medium;
+    background-color: #0077b6;
+    color: white;
+}
+
+.instituteDirect {
+    margin-bottom: 7px;
+}
+
+.iink {
+    color: #0077b6;
+    text-decoration: #0077b6;
+    cursor: pointer;
+}
+
+.hr {
+    margin-top: 15px ;
+    margin-bottom: 25px;
+}
+
+.googleLogin2 {
+    display: flex;
+    border: solid 1px black;
+    border-radius: 30px;
+    padding: 15px 25%;
+    cursor: pointer;
+}
+
+.googleText {
+    font-size: medium;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.googleIcon {
+   padding-right: 5px;
+   cursor: pointer;
+}
+
+.loginDirect {
+    padding: 20px 0;
+}
+
+.forgotPassword {
+    text-align: left;
+}

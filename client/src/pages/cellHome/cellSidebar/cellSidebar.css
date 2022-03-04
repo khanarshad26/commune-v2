@@ -1,0 +1,95 @@
+.instituteSidebar {
+  flex: 3;
+  height: calc(100vh - 50px);
+  position: sticky;
+  /* top: 50px; */
+  margin-left: 2%;
+    
+  }
+  
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(179, 179, 179);
+  }
+  
+  .sidebarWrapper {
+    padding: 20px;
+    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    border-radius: 10px;
+    margin : 20px;
+  }
+  
+  .sidebarList {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .sidebarListItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    text-decoration: none !important;
+    cursor: pointer;
+    flex: 50%;
+  }
+  
+  .sidebarIcon {
+    margin-right: 15px;
+    text-decoration: none;
+    color: black;
+    width: 30px;
+  }
+  
+  .sidebarButton {
+    width: 150px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+  }
+  
+  .sidebarHr {
+    margin: 20px 0;
+  }
+  
+  .sidebarFriendList {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .hr {
+    margin-bottom: 15px;
+  }
+  
+  .sidebarListItemText{
+      text-decoration: none;
+      color: black;
+  }
+
+  .updatedListView{
+      display: flex;
+      flex-direction: column;
+  }
+
+  .updatedListViewTop{
+    display: flex;
+  }
+
+  .addClub{
+      align-self: right;
+      color: #00b7ff;
+      font-size: medium;
+      align-items: center;
+      text-decoration: none;
+  }
+
+  .updatedListViewBottom{
+      margin-left: 20px;
+  }
