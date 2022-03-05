@@ -2,11 +2,13 @@ import React from "react";
 import "./messenger.css";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { Search } from "@material-ui/icons";
+import Contact from "../contact/Contact";
 
 const Messenger = () => {
 
-
+  const [contact,setContact] = React.useState('');
   const MessengerTemplate = (props) => {
+
     return (
         <>
         <div className="messageWrapper">
@@ -31,7 +33,6 @@ const Messenger = () => {
               <div className="notificationsHeader">
                 <div className="noficationHeading">Messenger</div>
                 <div className="menuIcon">
-                  <MoreVertIcon />
                 </div>
               </div>
 
@@ -45,10 +46,10 @@ const Messenger = () => {
                 {/* <div className="readNotification">Unread</div> */}
               {/* </div>
             </div> */}
-
+          {contact == '' ? <Contact contact={contact} setContact={setContact}/> : <MessengerTemplate/>}
+            {/* <MessengerTemplate />
             <MessengerTemplate />
-            <MessengerTemplate />
-            <MessengerTemplate />
+            <MessengerTemplate /> */}
             
           </div>
         </div>

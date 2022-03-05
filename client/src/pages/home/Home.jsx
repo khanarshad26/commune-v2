@@ -1,4 +1,4 @@
-import React , {useState, useEffect, useContext} from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Feed from "../../components/feed/Feed";
@@ -10,17 +10,17 @@ import "./home.css"
 import axios from 'axios';
 import { AuthContext } from '../../context/AuthContext';
 
-export default function Home() {
+export default function Home({ showMessage }) {
   const [notification, setNotification] = useState(false);
   const [messaging, setMessaging] = useState(false);
 
   const [posts, setPosts] = useState([]);
-  const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
-  const RightSide = () => {
-      if(notification) return <Notification />;
-      else if(messaging) return <Messenger />;
-      else return <Rightbar/> ;
+  const RightSide = ({ showMessage }) => {
+    // if (notification) return <Notification />;
+    // else if (messaging) return <Messenger />;
+    return <Rightbar showMessage={showMessage} />;
   }
 
   const fetchPosts = async () => {
@@ -31,23 +31,23 @@ export default function Home() {
       })
     );
   };
-// 
+  // 
   useEffect(() => {
     fetchPosts();
-     // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <>
       {/* <Topbar setNotification ={setNotification} notification={notification} setMessaging={setMessaging} messaging={messaging}/> */}
       <div className="homeContainer">
-        <Sidebar  />
+        <Sidebar />
         <div className="shareFeedContainer">
-          <Share />
-          <Feed posts={posts}/>
+          <Share /> 
+          <Feed posts={posts} />
         </div>
         <div className="homeRightbar">
-          <RightSide/> 
+          <RightSide showMessage={showMessage}/>
         </div>
       </div>
     </>

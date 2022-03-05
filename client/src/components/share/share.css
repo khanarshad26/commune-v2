@@ -77,6 +77,8 @@
     margin-right: 20px;
     cursor: pointer;
     color: white;
+    width: 100px;
+    font-size: 16px;
 }
 
 .shareImgContainer{
@@ -98,6 +100,11 @@
 }
 
 .selectShare {
-  border: none;
+  border: 1px solid #ccc;
   text-decoration: none;
+  color: black;
+  background-color: white;
+  height: 30px;
+  width: 150px;
+ font-size: 16px;
 }

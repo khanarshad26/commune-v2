@@ -1,7 +1,7 @@
 
 
 .searchbar1 {
-    width: 80%;
+    width: 90%;
     height: 35px;
     /* background-color: grey; */
     border-radius: 30px;
@@ -21,7 +21,7 @@
   
   .searchInput {
     border: none;
-    width: 70%;
+    width: 90%;
   }
   
   .searchInput:focus {
@@ -69,4 +69,10 @@
 .msgTime1 {
     font-size: 13px;
     font-weight: bold;
+}
+
+.notificationContainer{
+  visibility: show;
+  margin-left: 20px;
+  width: fit-content;
 }
