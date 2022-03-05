@@ -1,4 +1,6 @@
 import "./topbar.css";
+// import { useState } from "react";
+import { Search, Chat, Notifications, Home, People, RssFeed } from "@material-ui/icons";
 import { useState } from "react";
 import { Search } from "@material-ui/icons";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -11,12 +13,21 @@ import {setShowMenu} from '../../state/utility.js';
 export default function Topbar() {
   const dispatch = useDispatch();
   const user = useSelector(state => state.user.user);
-  // const showMenu = useSelector(state => state.utility.showMenu);
 
-  // const msm = () => {
-  //   dispatch(setShowMenu());
-  //   console.log(showMenu)
-  // }
+  const notification_count = 0;
+  const msg_count = 0;
+  // const [showMessage,setShowMessage] = useState(false);
+
+  const notificationHandler = () => {
+    // props.setNotification(!props.notification);
+    // props.setMessaging(false);
+  }
+
+  const messagingHandler = () => {
+    // props.setMessaging(!props.messaging);
+    // props.setNotification(false);
+    setShowMessage(!showMessage);
+  }
 
   return (
     <div className="topbarContainer">
@@ -37,7 +48,6 @@ export default function Topbar() {
           <div className="navWrapper">
           <Nav />
           </div>
-          
 
           <div className="vl"></div>
 

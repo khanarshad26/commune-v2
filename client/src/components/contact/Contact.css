@@ -1,0 +1,29 @@
+.contactImg {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+}
+
+.contactName {
+    border: "solid 1px";
+    border-color:"#dbd9d9";
+}
+
+.contactName:hover {
+    border: "solid 1px";
+    border-color:"#dbd9d9";
+    background-color: "#dbd9d9";
+}
+
+.messageInfo1 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+    flex: 50%;
+
+}
+
+.contactWrapper{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,5 +1,5 @@
-import React , {useState, useEffect, useContext} from 'react';
- 
+import React, { useState, useEffect, useContext } from 'react';
+import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
@@ -11,11 +11,19 @@ import axios from 'axios';
 import { useSelector } from 'react-redux'
 import Nav from '../../components/topbar/Nav';
 
-export default function Home() {
-  const user = useSelector(state => state.user.user);
+export default function Home({ showMessage }) {
+  const [notification, setNotification] = useState(false);
+  const [messaging, setMessaging] = useState(false);
 
   const [posts, setPosts] = useState([]);
+  const user = useSelector(state => state.user.user);
   const showMenu = useSelector(state => state.utility.showMenu);
+
+  const RightSide = ({ showMessage }) => {
+    // if (notification) return <Notification />;
+    // else if (messaging) return <Messenger />;
+    return <Rightbar showMessage={showMessage} />;
+  }
 
   const fetchPosts = async () => {
     const res = await axios.get(`/api/post/timeline/all/${user?.type}/${user?._id}`);
@@ -25,11 +33,11 @@ export default function Home() {
       })
     );
   };
-// 
+  // 
   useEffect(() => {
     fetchPosts();
-     // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <>
@@ -41,11 +49,11 @@ export default function Home() {
         <Sidebar  />
         </div>
         <div className="shareFeedContainer">
-          <Share />
-          <Feed posts={posts}/>
+          <Share /> 
+          <Feed posts={posts} />
         </div>
         <div className="homeRightbar">
-          <Rightbar/> 
+          <RightSide showMessage={showMessage}/>
         </div>
       </div>
     </>

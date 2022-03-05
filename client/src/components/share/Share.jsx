@@ -1,11 +1,16 @@
 import "./share.css";
-import { EventEmitter } from "events";
-import { Event, Cancel } from "@material-ui/icons";
-import SlowMotionVideoIcon from "@mui/icons-material/SlowMotionVideo";
-import PhotoCameraBackIcon from "@mui/icons-material/PhotoCameraBack";
+import { EventEmitter } from 'events';
+import { Event, Cancel } from "@material-ui/icons"
+import SlowMotionVideoIcon from '@mui/icons-material/SlowMotionVideo';
+import PhotoCameraBackIcon from '@mui/icons-material/PhotoCameraBack';
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { useContext, useRef, useState } from "react";
+import { Box } from "@material-ui/core";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 export default function Share() {
   const user = useSelector((state) => state.user.user);
@@ -14,7 +19,9 @@ export default function Share() {
   const [openfor, setOpenfor] = useState("Connections");
   const [type, setType] = useState("General");
 
-  const shareHandler = () => {};
+  const shareHandler = () => {
+
+  }
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -23,10 +30,10 @@ export default function Share() {
       userId: user._id,
       username: user.name || user.username,
       openFor: openfor || "Campus",
-      type: type || "General",
+      type: type || 'General',
       desc: desc.current.value || "",
       img: user.profilePicture || "/assets/noAvatar.png",
-      userType: user.type,
+      userType: user.type
     };
     if (file) {
       const data = new FormData();
@@ -131,6 +138,6 @@ export default function Share() {
           </div>
         </form>
       </div>
-    </div>
-  );
+      </div>
+      );
 }
