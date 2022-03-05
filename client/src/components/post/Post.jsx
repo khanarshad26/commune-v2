@@ -10,13 +10,14 @@ import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutline
 import ShareIcon from "@mui/icons-material/Share";
 import SendIcon from "@mui/icons-material/Send";
 import CommentBox from "../commentBox/CommentBox";
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 
 export default function Post({ post }) {
   const [like, setLike] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
   const [showCommentBox, setShowCommentBox] = useState(false)
   const { user: currentUser } = useContext(AuthContext);
-  
+
 
   useEffect(() => {
     setIsLiked(post.likes.includes(currentUser._id));
@@ -25,7 +26,7 @@ export default function Post({ post }) {
   const likeHandler = () => {
     try {
       axios.put("/posts/" + post._id + "/like", { userId: currentUser._id });
-    } catch (err) {}
+    } catch (err) { }
     setLike(isLiked ? like - 1 : like + 1);
     setIsLiked(!isLiked);
   };
@@ -39,8 +40,8 @@ export default function Post({ post }) {
               <img className="postProfileImg" src={post.img ? post.img : "assets/noAvatar.png"} alt=" " />
             </Link>
             <div className="uppermiddle">
-            <span className="postUsername">{post.username}</span>
-            <span className="postDate">{format(post.createdAt)}</span>
+              <span className="postUsername">{post.username}</span>
+              <span className="postDate">{format(post.createdAt)}</span>
             </div>
           </div>
           <div className="postTopRight">
@@ -48,39 +49,43 @@ export default function Post({ post }) {
           </div>
         </div>
         <div className="postCenter">
-          <span className="postText">{post.desc}</span>
-          <img className="postImg" src={post.postImg} alt=" " />
+          <span className="postText">{post?.desc}</span>
+          {post?.postImg && <img className="postImg" src={post?.postImg} alt=" " />}
+
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
-            <img
+            {like > 0 && <img
               className="likeIcon"
               src={"/assets/like.png"}
-              onClick={likeHandler}
               alt=" "
-            />
-            <img
-              className="likeIcon"
-              src={"/assets/heart.png"}
-              onClick={likeHandler}
-              alt=" "
-            />
-            <span className="postLikeCounter">{like}</span>
+            />}
+            {like > 0 && <span className="postLikeCounter">{like}</span>}
+
+            {/* <span className="postLikeCounter">{like}</span> */}
           </div>
         </div>
 
-        <hr className="hrPost"/>
+        <hr className="hrPost" />
 
         {/* ___post new bottom_____ */}
         <div className="shareBottom">
           <div className="shareOptions">
-            <div className="shareOption">
-              <ThumbUpAltOutlinedIcon
-                className="shareIcon"
-                onClick={likeHandler}
-                htmlColor="#03045e"
-              />
-              <span className="shareOptionText">Like</span>
+            <div className="shareOption" onClick={likeHandler}>
+
+
+              {!isLiked ? <>
+                <ThumbUpAltOutlinedIcon
+                  className="shareIcon"
+                  htmlColor="#03045e"
+                />
+                <span className="shareOptionText">Like</span>
+              </> : <>
+                <ThumbUpIcon />
+                <span className="shareOptionText">Dislike</span>
+              </>
+              }
+
             </div>
             <div className="shareOption">
               <ChatBubbleOutlineOutlinedIcon
@@ -102,7 +107,7 @@ export default function Post({ post }) {
 
 
       </div>
-      {showCommentBox ? <CommentBox post={post}/> : null}
+      {showCommentBox ? <CommentBox post={post} /> : null}
     </div>
   );
 }

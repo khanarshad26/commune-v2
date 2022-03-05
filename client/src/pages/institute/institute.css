@@ -74,8 +74,9 @@
 .institutemessage{
     display: flex;
     flex-direction: column;
-    width: 50%;
-    
+    width: 40%;
+    height: 20%;
+    margin-top: 50px;
     margin-bottom: 0px;
 }
 .institutemessageIcon{

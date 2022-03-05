@@ -90,7 +90,7 @@ function App() {
     <>
    
       <Router>
-      <Topbar />
+      {user ? <Topbar /> : null}
           <Routes>
             {/* {(user.type==="Student" || user.type==="Faculty")} */}
             <Route exact path="/" element={user ? <HomePage /> : <LandingPage />} ></Route>

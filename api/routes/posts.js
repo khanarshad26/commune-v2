@@ -106,6 +106,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+
 //get timeline posts
 router.get("/timeline/all/:type/:id", async (req, res) => { //user_id
   try {
@@ -115,14 +116,16 @@ router.get("/timeline/all/:type/:id", async (req, res) => { //user_id
       const friendPosts = await Post.find({ institute : currentUser._id })
       res.json(userPosts.concat(...friendPosts))
     }
-    // const currentUser = await User.findById(req.params.id);
-    // const userPosts = await Post.find({ userId: currentUser._id });
-    // const friendPosts = await Promise.all(
-    //   currentUser.followings.map((friendId) => {
-    //     return Post.find({ userId: friendId });
-    //   })
-    // );
-    // res.json(userPosts.concat(...friendPosts))
+    else if(req.params.type === "Student" || req.params.type === "Faculty"){
+    const currentUser = await User.findById(req.params.id);
+    const userPosts = await Post.find({ userId: currentUser._id });
+    const friendPosts = await Promise.all(
+      currentUser.followings.map((friendId) => {
+        return Post.find({ userId: friendId });
+      })
+    );
+    res.json(userPosts.concat(...friendPosts))
+    }
   } catch (err) {
     res.status(500).json(err);
   }

@@ -20,6 +20,26 @@ export default function Profile() {
     setUser(res.data);
   };
 
+  const [posts, setPosts] = useState([]);
+  // const {user} = useContext(AuthContext);
+
+
+
+  const fetchPosts = async () => {
+    const res = await axios.get(`/api/post/timeline/all/${currrentUser.type}/${currrentUser._id}`);
+    setPosts(
+      res.data.sort((p1, p2) => {
+        return new Date(p2.createdAt) - new Date(p1.createdAt);
+      })
+    );
+  };
+  // 
+  useEffect(() => {
+    fetchPosts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+
   useEffect(() => {
     fetchUser();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -74,7 +94,7 @@ export default function Profile() {
 
   return (
     <>
-       
+
       <div className="profile1">
         <Sidebar />
         <div className="profileRight">
@@ -106,21 +126,21 @@ export default function Profile() {
                 />
               </div>
               {/* <img src="" className="profileUserImgAdd" /> */}
-                <label htmlFor="file">
-                  <img
-                    src="/assets/plus.png"
-                    className="profileUserImgAdd"
-                    onClick={addProfileImage}
-                    alt=" "
-                  />
-                  <input
-                    style={{ display: "none" }}
-                    type="file"
-                    id="file"
-                    accept=".png,.jpeg,.jpg, .pdf, .dox, .zip, .xlsx"
-                    onChange={(e) => setFile(e.target.files[0])}
-                  />
-                </label>
+              <label htmlFor="file">
+                <img
+                  src="/assets/plus.png"
+                  className="profileUserImgAdd"
+                  onClick={addProfileImage}
+                  alt=" "
+                />
+                <input
+                  style={{ display: "none" }}
+                  type="file"
+                  id="file"
+                  accept=".png,.jpeg,.jpg, .pdf, .dox, .zip, .xlsx"
+                  onChange={(e) => setFile(e.target.files[0])}
+                />
+              </label>
             </div>
             <div className="profileInfo1">
               <h4 className="profileInfoName">{user.username}</h4>
@@ -128,7 +148,7 @@ export default function Profile() {
             </div>
           </div>
           <div className="profileRightBottom">
-            <Feed />
+            <Feed posts={posts} />
             <Rightbar profile />
           </div>
         </div>

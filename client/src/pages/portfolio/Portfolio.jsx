@@ -1,7 +1,7 @@
 import "./portfolio.css";
-import React, {useState, useContext, useEffect} from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import axios from "axios";
-import {AuthContext} from '../../context/AuthContext.js';
+import { AuthContext } from '../../context/AuthContext.js';
 import Topbar from "../../components/topbar/Topbar";
 import ConnectedAccounts from "../../components/connectedAccounts/ConnectedAccounts";
 import About from "../../components/portfolio/about/About";
@@ -16,6 +16,7 @@ import SendIcon from '@mui/icons-material/Send';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 export default function Portfolio() {
+  const { user: currrentUser } = useContext(AuthContext);
   // const [user, setUser] = useState({});
   // const {user : currrentUser} = useContext(AuthContext);
 
@@ -31,28 +32,32 @@ export default function Portfolio() {
 
   return (
     <>
-       
+
       <div className="portfolio">
         <div className="portfolioTop">
-          
-          <img src="/assets/noAvatar.png" className="portfolioTopImage" alt=" "/>
+
+          <img src="/assets/noAvatar.png" className="portfolioTopImage" alt=" " />
 
           <div className="portfolioTopLeft">
 
-            <div className="name">Arshad Khan</div>
-            <div className="address">Morena MP</div>
-            
-            <div className="emailnPhone">
+            <div className="name">{currrentUser?.username}</div>
+            <div className="address">{currrentUser?.address?.city}</div>
+
+            {currrentUser?.email && <div className="emailnPhone">
               <AttachEmailOutlinedIcon className="shareIcon"
                 htmlColor="#0077b6" />
-              <div className="portfolioDetail">arshadkhan2600@gmail.com</div>
-            </div>
-            
-            <div className="emailnPhone">
+              <div className="portfolioDetail">{currrentUser?.email}</div>
+            </div>}
+
+
+            {currrentUser?.phone && <div className="emailnPhone">
+
               <LocalPhoneOutlinedIcon className="shareIcon"
                 htmlColor="#0077b6" />
-              <div className="portfolioDetail">+91 9669430311</div>
+              <div className="portfolioDetail">{currrentUser?.phone}</div>
             </div>
+            }
+
 
           </div>
 
@@ -62,11 +67,11 @@ export default function Portfolio() {
             </div>
             <div className="portfolioShare">
               <SendIcon className="shareIcon"
-                htmlColor="#0077b6"/>
+                htmlColor="#0077b6" />
               <div className="portfolioShareText">Share</div>
             </div>
           </div>
-          
+
         </div>
 
         <div className="portfolioBottom">

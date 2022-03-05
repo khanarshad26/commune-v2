@@ -358,7 +358,7 @@ const workshopClickHandler = () => {
                 </div>
               </div>
 
-              {/* <div className="institutemessage">
+              <div className="institutemessage">
                 <button className="institutemessageButton">
                   <img
                     className="institutemessageIcon"
@@ -367,8 +367,8 @@ const workshopClickHandler = () => {
                   />{" "}
                   <span className="institutemeSSage">Message</span>
                 </button>
-                <span className="institutenote"> drop your queries here</span>
-              </div> */}
+                {/* <span className="institutenote"> drop your queries here</span> */}
+              </div>
             </div>
 
             <hr />
