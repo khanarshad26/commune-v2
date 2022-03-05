@@ -15,7 +15,6 @@ const PostSchema = new mongoose.Schema(
     },
     username: {
       type: String,
-      // required: true,
     },
     openFor :{
       type : String,
@@ -39,10 +38,10 @@ const PostSchema = new mongoose.Schema(
       type: Array,
       default: [],
     },
-    comments : {
-      type: Array,
-      default: [],
-    }
+    comments : [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref : 'Comment',
+    }]
   },
   { timestamps: true }
 );

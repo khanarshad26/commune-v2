@@ -7,12 +7,12 @@ const ReplySchema = new mongoose.Schema(
       max: 1000,
     },
     time: {
-      type: String,
+      type: Date,
       max: 200,
     },
     replier: {
-      type: String,
-      max: 200,
+      type: mongoose.Schema.Types.ObjectId,
+      ref : 'User',
     },
   },
 

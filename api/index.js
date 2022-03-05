@@ -10,10 +10,8 @@ import instituteRoute from "./routes/institute/institute.js";
 import cellRoute from "./routes/institute/cell.js";
 
 import workshopRoute from "./routes/workshop.js";
-
 import authRoute from "./routes/auth.js";
 import postRoute from "./routes/posts.js";
-
 import forumRoute from "./routes/forum.js";
 
 import aboutRoute from './routes/portfolio/about.js';
@@ -23,6 +21,7 @@ import projectRoute from './routes/project.js';
 import eventRoute from './routes/event.js';
 import experienceRoute from './routes/portfolio/experience.js';
 import interestRoute from './routes/portfolio/interest.js';
+import commentRoute from './routes/comment.js';
 
 
 
@@ -89,6 +88,8 @@ app.use('/api/education', educationRoute);
 app.use('/api/experience', experienceRoute);
 app.use('/api/achievement', achievementsRoute);
 app.use('/api/interest', interestRoute);
+
+app.use('/api/comment',commentRoute)
 
 app.listen(PORT, () => {
   console.log("Backend server is running!");
