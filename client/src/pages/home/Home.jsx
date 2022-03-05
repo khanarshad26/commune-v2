@@ -8,14 +8,16 @@ import Messenger from '../../components/messenger/Messenger';
 import Share from '../../components/share/Share';
 import "./home.css"
 import axios from 'axios';
-import { AuthContext } from '../../context/AuthContext';
+import { useSelector } from 'react-redux'
+import Nav from '../../components/topbar/Nav';
 
 export default function Home({ showMessage }) {
   const [notification, setNotification] = useState(false);
   const [messaging, setMessaging] = useState(false);
 
   const [posts, setPosts] = useState([]);
-  const { user } = useContext(AuthContext);
+  const user = useSelector(state => state.user.user);
+  const showMenu = useSelector(state => state.utility.showMenu);
 
   const RightSide = ({ showMessage }) => {
     // if (notification) return <Notification />;
@@ -24,7 +26,7 @@ export default function Home({ showMessage }) {
   }
 
   const fetchPosts = async () => {
-    const res = await axios.get(`/api/post/timeline/all/${user.type}/${user._id}`);
+    const res = await axios.get(`/api/post/timeline/all/${user?.type}/${user?._id}`);
     setPosts(
       res.data.sort((p1, p2) => {
         return new Date(p2.createdAt) - new Date(p1.createdAt);
@@ -40,8 +42,12 @@ export default function Home({ showMessage }) {
   return (
     <>
       {/* <Topbar setNotification ={setNotification} notification={notification} setMessaging={setMessaging} messaging={messaging}/> */}
+      {/* {showMenu ? <Sidebar  /> : null} */}
+      {showMenu ? <Nav  /> : null}
       <div className="homeContainer">
-        <Sidebar />
+        <div className="homeLeftbar">
+        <Sidebar  />
+        </div>
         <div className="shareFeedContainer">
           <Share /> 
           <Feed posts={posts} />

@@ -28,16 +28,27 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+<<<<<<< HEAD
 import { AuthContext } from './context/AuthContext.js'
+=======
+// import { useSelector } from 'react-redux'; 
+>>>>>>> main
 import Institute from "./pages/institute/Institute";
+import { useSelector } from 'react-redux';
 
 
 
 
 function App() {
+<<<<<<< HEAD
   const { user } = useContext(AuthContext);
   const [showMessage, setShowMessage] = useState(false);
+=======
+  // const { user } = useContext(AuthContext);
+>>>>>>> main
   // let user = false;
+  const user = useSelector(state => state.user.user);
+  console.log("App",user)
   const connections = [{
     username: "Arshad Khan",
     // coverimgurl :'/assets/person/4.jpeg',
@@ -92,6 +103,7 @@ function App() {
     <>
 
       <Router>
+<<<<<<< HEAD
         {user ? <Topbar setShowMessage={setShowMessage} showMessage={showMessage} /> : null}
         <Routes>
           {/* {(user.type==="Student" || user.type==="Faculty")} */}
@@ -123,6 +135,39 @@ function App() {
 
         </Routes>
 
+=======
+      {user ? <Topbar /> : null }
+          <Routes>
+            {/* {(user.type==="Student" || user.type==="Faculty")} */}
+            <Route exact path="/" element={user ? <HomePage /> : <LandingPage />} ></Route>
+            <Route path="/landing" element={<LandingPage />} ></Route>
+            <Route path="/login" element={user ? <Navigate to="/" /> : <Signin />} ></Route>
+            <Route path="/register" element={user ? <Navigate to="/" /> : <Signup />}></Route>
+            <Route path="/profile" element={<Profile />}></Route>
+            <Route path="/portfolio" element={<Portfolio />}></Route>
+            <Route path="/workshops" element={<Workshop />}></Route>
+            <Route path="/projects" element={<Project />}></Route>
+            <Route path="/events" element={<Event />}></Route>
+            <Route path="/workshop/:id" element={<WorkshopLayout />}></Route>
+            <Route path="/project/:id" element={<ProjectLayout />}></Route>
+            <Route path="/event/:id" element={<EventLayout />}></Route>
+            <Route path="/myconnections" element={<Connections connections={connections} />}></Route>
+            <Route path="/forum" element={<Forum />}></Route>
+            <Route path="/team" element={<Teams />}></Route>
+            <Route path="/event/:id" element={<EventLayout />}></Route>
+            <Route path="/bookmark" element={<Bookmarks />}></Route>
+            <Route path="/institute" element={<Institute />}></Route>
+            <Route path="/club/:id" element={<Cell />}></Route>
+            <Route path="/association/:id" element={<Cell />}></Route>
+            <Route path="/logintest" element={ <Signin />} ></Route>
+            <Route path="/registertest" element={<Signup />}></Route>
+            <Route path="/signup" element={user ? <Navigate to="/" /> : <Signup2 />}></Route>
+            {/* <Route path="/project/:id" element={<ProjectLayout />}></Route> */}
+            <Route path="/:type" element={ <AddCell />}></Route>
+
+          </Routes>
+        
+>>>>>>> main
       </Router>
     </>
   );

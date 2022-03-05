@@ -1,0 +1,72 @@
+
+
+.searchbar1 {
+    width: 80%;
+    height: 35px;
+    /* background-color: grey; */
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border: solid 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .searchIcon {
+    font-size: 20px !important;
+    margin-left: 10px;
+    color: black;
+  }
+  
+  .searchInput {
+    border: none;
+    width: 70%;
+  }
+  
+  .searchInput:focus {
+    outline: none;
+  }
+
+
+  /* _____________MessengerTemplate */
+
+  .messageWrapper1 {
+    display: flex;
+    margin-bottom: 15px;
+    width: 90%;
+}
+
+.messengeImg {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+}
+
+.messageInfo1 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+    flex: 50%;
+
+}
+
+.msgName {
+    font-size: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 500;
+    width: 90%;
+}
+
+.msg1 {
+    font-size: 14px;
+    padding-bottom: 5px;
+    font-weight: 400;
+    width: 90%;
+}
+
+.msgTime1 {
+    font-size: 13px;
+    font-weight: bold;
+}

@@ -4,7 +4,7 @@ import { Event, Cancel } from "@material-ui/icons"
 import SlowMotionVideoIcon from '@mui/icons-material/SlowMotionVideo';
 import PhotoCameraBackIcon from '@mui/icons-material/PhotoCameraBack';
 import axios from "axios";
-import { AuthContext } from "../../context/AuthContext";
+import { useSelector } from "react-redux";
 import { useContext, useRef, useState } from "react";
 import { Box } from "@material-ui/core";
 import InputLabel from '@mui/material/InputLabel';
@@ -13,7 +13,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 export default function Share() {
-  const { user } = useContext(AuthContext);
+  const user = useSelector((state) => state.user.user);
   const desc = useRef();
   const [file, setFile] = useState(null);
   const [openfor, setOpenfor] = useState("Connections");
@@ -43,7 +43,6 @@ export default function Share() {
       data.append("file", file);
       newPost.postImg = "/assets/" + fileName;
       try {
-
         await axios.post("/api/upload", data);
       } catch (err) {
         console.log(err);
@@ -64,12 +63,12 @@ export default function Share() {
     <div className="share">
       <div className="shareWrapper">
         <div className="shareTop">
-          <img className="shareProfileImg" src={user.profilePicture || "/assets/noAvatar.png"} alt=" " />
-          <input
-            placeholder="Start a post"
-            className="shareInput"
-            ref={desc}
+          <img
+            className="shareProfileImg"
+            src={user?.profilePicture || "/assets/noAvatar.png"}
+            alt=" "
           />
+          <input placeholder="Start a post" className="shareInput" ref={desc} />
         </div>
         <hr className="shareHr" />
 
@@ -81,45 +80,64 @@ export default function Share() {
         )}
 
         <form className="shareBottom" onSubmit={submitHandler}>
-          <label htmlFor="file" className="shareOption">
-            <PhotoCameraBackIcon htmlColor="tomato" className="shareIcon" />
-            <span className="shareOptionText">File</span>
-            <input
-              style={{ display: "none" }}
-              type="file"
-              id="file"
-              accept=".png,.jpeg,.jpg, .pdf, .dox, .zip, .xlsx"
-              onChange={(e) => setFile(e.target.files[0])}
-            />
-          </label>
-          <div className="shareOption1">
+          
+          <div className="shareOptions1">
+            <label htmlFor="file" className="shareOption">
+              <PhotoCameraBackIcon htmlColor="tomato" className="shareIcon" />
+              <span className="shareOptionText">File</span>
+              <input
+                style={{ display: "none" }}
+                type="file"
+                id="file"
+                accept=".png,.jpeg,.jpg, .pdf, .dox, .zip, .xlsx"
+                onChange={(e) => setFile(e.target.files[0])}
+              />
+            </label>
+          </div>
+
+          <div className="shareOption1 shareOptions2">
             <SlowMotionVideoIcon htmlColor="#0077b6" className="shareIcon" />
             {/* <span className="shareOptionText">Video</span> */}
-
-                  <select name="event" id="event" className="selectShare" value={type} onChange={(e) => setType(e.target.value)}>
-                    <optgroup label="Event type">
-                      <option value="General">General</option>
-                      <option value="Project">Project</option>
-                      <option value="Event">Event</option>
-                      <option value="Workshop">Workshop</option>
-                    </optgroup>
-                  </select>
-                </div>
-                <div className="shareOption1">
-                  <Event htmlColor="#00b4d8" className="shareIcon" />
-                  <select name="audience" id="audience" className="selectShare" value={openfor} onChange={(e) => setOpenfor(e.target.value)}>
-                    <optgroup label="Audience" >
-                      <option value="Connections">Connections</option>
-                      <option value="Campus">Campus</option>
-                      <option value="All">All</option>
-                      <option value="Only Me">Private</option>
-                    </optgroup>
-                  </select>
-                </div>
-                <button type="submit" className="shareButton" onClick={shareHandler}>Share</button>
-
-              </form>
+            <select
+              name="event"
+              id="event"
+              className="selectShare"
+              value={type}
+              onChange={(e) => setType(e.target.value)}
+            >
+              <optgroup label="Event type">
+                <option value="General">General</option>
+                <option value="Project">Project</option>
+                <option value="Event">Event</option>
+                <option value="Workshop">Workshop</option>
+              </optgroup>
+            </select>
           </div>
+
+          <div className="shareOption1 shareOptions2">
+            <Event htmlColor="#00b4d8" className="shareIcon" />
+            <select
+              name="audience"
+              id="audience"
+              className="selectShare"
+              value={openfor}
+              onChange={(e) => setOpenfor(e.target.value)}
+            >
+              <optgroup label="Audience">
+                <option value="Connections">Connections</option>
+                <option value="Campus">Campus</option>
+                <option value="All">All</option>
+                <option value="Only Me">Private</option>
+              </optgroup>
+            </select>
+          </div>
+          <div className="shareOptionsButton shareOptions3">
+            <button type="submit" className="shareButton" onClick={shareHandler}>
+              Share
+            </button>
+          </div>
+        </form>
+      </div>
       </div>
       );
 }

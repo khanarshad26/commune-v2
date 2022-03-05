@@ -8,7 +8,7 @@
 
 .shareWrapper {
   padding: 10px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .shareTop {
@@ -44,7 +44,7 @@
   justify-content: space-between;
 }
 
-.shareOptions{
+.shareOption{
     display: flex;
     margin-left: 20px;
     width: 100%;
@@ -98,13 +98,95 @@
   cursor: pointer;
   opacity: 0.7;
 }
-
+.shareOption{
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  cursor: pointer;
+}
 .selectShare {
   border: 1px solid #ccc;
   text-decoration: none;
+<<<<<<< HEAD
   color: black;
   background-color: white;
   height: 30px;
   width: 150px;
  font-size: 16px;
+=======
+}
+
+
+@media only screen and (max-width:425px){
+
+.shareOption1{
+  align-items: center;
+  justify-content: flex-end;
+}
+.shareButton {
+  border: none;
+  padding: 4px;
+  margin-right: 2px;
+}
+.shareOptionText {
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: -54px;
+}
+.shareOption {
+  
+  margin-right: 0px;
+  
+}
+.shareOptions1{
+  width:15%;
+}
+.shareOptions2{
+  width:30%;
+}
+.shareOptions3{
+  width:15%;
+}
+.selectShare {
+  width: 60%;
+}
+}
+@media only screen and (max-width:375px){
+  .shareWrapper {
+       padding: 4px;
+    /* margin-top: 13px; */
+}
+.shareOption1{
+
+  align-items: center;
+  justify-content: flex-end;
+}
+.shareButton {
+  border: none;
+  padding: 4px;
+  margin-right: 2px;
+}
+.shareOptionText {
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: -54px;
+}
+.shareOption {
+  
+  margin-right: 0px;
+  
+}
+.shareOptions1{
+  width:15%;
+}
+.shareOptions2{
+  width:30%;
+}
+.shareOptions3{
+  width:15%;
+}
+.selectShare {
+  width: 60%;
+}
+>>>>>>> main
 }

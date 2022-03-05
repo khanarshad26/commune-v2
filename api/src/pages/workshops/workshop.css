@@ -1,0 +1,139 @@
+.eventPageContainer{
+    display: flex;
+    /* overflow-x: hidden; */
+}
+
+.eventPageRight {
+    display: flex;
+    flex-direction: column;
+    flex: 8.5;
+}
+
+.hrEvent {
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+.eventPageRight {
+    /* margin: 20px; */
+    padding: 20px;
+    flex: 8.5;
+}
+
+.eventsList {
+    display: flex;
+}
+
+.heading{
+    margin-top: 20px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.commonLayoutHeader {
+    display: flex;
+    /* margin: 10px 0; */
+    background-color: #e2e6f1;
+    border-bottom: solid 1px #6c757d ;
+    /* min-height: ; */
+    padding: 10px ;
+    border-radius: 5px;
+}
+
+.commonLayoutHeading {
+    /* display: flex; */
+    font-size: medium;
+    font-weight: bold;
+    padding: 5px 10px;
+    /* background-color: #dee1eb; */
+    margin-right: 20px;
+    border-radius: 5px;
+    color: #3d5a80;
+    cursor: pointer;
+}
+
+.commonLayoutHeaderLeft {
+    display: flex;
+    flex: 90%;
+}
+
+.commonLayoutHeaderRight {
+    display: flex;
+    flex: 10%;
+    /* text-align: left; */
+}
+
+/* _______workshop.css___________ */
+
+.workshopPageContainer{
+    display: flex;
+    /* overflow-x: hidden; */
+}
+
+.workshopPageRight {
+    display: flex;
+    flex-direction: column;
+    flex: 9;
+}
+
+.hrworkshop {
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+.workshopPageRight {
+    /* margin: 20px; */
+    padding: 20px;
+}
+
+.workshopsList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.heading{
+    margin-top: 20px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+/* _____________workshop Card_________________ */
+
+  
+  .addworkshopShadowBox {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    min-height: 150px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 16px -8px rgb(0 0 0 / 68%);
+    text-align: left !important;
+}
+
+.selectworkshop {
+  margin-left: 10px;
+  height: 2em;
+  width: auto;
+  border-radius: 5px;
+  border-width: 1px
+}
+
+
+.labelworkshopType {
+  font-size: 13px;
+  font-weight: 300;
+  margin-left: 10px;
+  padding: 5px 0;
+}
+
+.fullSection {
+  padding-left: 10px;
+  width: 89%;
+}
+
+.shareworkshopImgContainer {
+  padding: 0 20px 10px 20px;
+  position: relative;
+  width: 290px;
+}

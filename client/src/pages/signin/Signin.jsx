@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 // import axios from "axios";
 import { AuthContext } from '../../context/AuthContext.js';
 import { useContext } from "react";
+import {useDispatch} from 'react-redux';
 import { loginCall } from "../../apiCalls";
 import { useState } from "react";
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
@@ -33,31 +34,36 @@ const Signin = () => {
 
   const email = useRef();
   const password = useRef();
-  // const navigate = useNavigate();
-  const { dispatch } = useContext(AuthContext);
+  const dispatch = useDispatch();
   const [type, setType] = useState("Student");
 
   const SigninHandler = async (e) => {
     e.preventDefault();
     loginCall(
-      { type: type, email: email.current.value, password: password.current.value },
+      {
+        type: type,
+        email: email.current.value,
+        password: password.current.value,
+      },
       dispatch
     );
-  }
+  };
 
   return (
     <>
       <div className="signin">
         <div className="logoText2">Commune</div>
         <div className="signupBox">
-          {/* <div className="instituteDirect">
-            Are you an Institute?
-            <span className="iink"> Sign in</span>
-          </div> */}
           <form onSubmit={SigninHandler} className="form">
             <div className="inputContainer">
               <label className="label">Type</label>
-              <select name="event" id="event" className="select" value={type} onChange={(e) => setType(e.target.value)}>
+              <select
+                name="event"
+                id="event"
+                className="select"
+                value={type}
+                onChange={(e) => setType(e.target.value)}
+              >
                 <optgroup label="Event type">
                   <option value="select" disabled>---select---</option>
                   <option value="Student">Student</option>
@@ -65,7 +71,6 @@ const Signin = () => {
                   <option value="Institute">Institute</option>
                   <option value="Club">Club</option>
                   <option value="Association">Association</option>
-
                 </optgroup>
               </select>
             </div>
