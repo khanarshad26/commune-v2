@@ -29,13 +29,8 @@ export default function Portfolio() {
   //   // eslint-disable-next-line react-hooks/exhaustive-deps
   // },[])
 
-  const showUser = () => {
-    console.log(user);
-  }
-
   return (
     <>
-       <button onClick={showUser}>show User</button>
       <div className="portfolio">
         <div className="portfolioTop">
           

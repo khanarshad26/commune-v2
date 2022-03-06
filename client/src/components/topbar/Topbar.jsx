@@ -1,6 +1,4 @@
 import "./topbar.css";
-// import { useState } from "react";
-import { Search, Chat, Notifications, Home, People, RssFeed } from "@material-ui/icons";
 import { useState } from "react";
 import { Search } from "@material-ui/icons";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -16,7 +14,7 @@ export default function Topbar() {
 
   const notification_count = 0;
   const msg_count = 0;
-  // const [showMessage,setShowMessage] = useState(false);
+  const [showMessage,setShowMessage] = useState(false);
 
   const notificationHandler = () => {
     // props.setNotification(!props.notification);

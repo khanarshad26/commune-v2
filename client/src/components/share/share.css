@@ -107,13 +107,11 @@
 .selectShare {
   border: 1px solid #ccc;
   text-decoration: none;
-<<<<<<< HEAD
   color: black;
   background-color: white;
   height: 30px;
   width: 150px;
  font-size: 16px;
-=======
 }
 
 
@@ -188,5 +186,4 @@
 .selectShare {
   width: 60%;
 }
->>>>>>> main
 }

@@ -76,9 +76,10 @@
     width: 60%;
     margin-left: 0px;
     position: absolute;
+    /* position: sticky; */
     top: 30px;
     left: -25px;
-    height: 100vh;
+    height : auto;
     z-index: 1000;
     border-radius: 0px;
     background: white;
@@ -86,5 +87,9 @@
 .sidebarWrapper {
   padding: 20px;
   margin: 20px;
+}
+
+.homeSidebarWrapper {
+  margin: 0px;
 }
 }
