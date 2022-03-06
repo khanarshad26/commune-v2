@@ -41,9 +41,6 @@ export default function Home({ showMessage }) {
 
   return (
     <>
-      {/* <Topbar setNotification ={setNotification} notification={notification} setMessaging={setMessaging} messaging={messaging}/> */}
-      {/* {showMenu ? <Sidebar  /> : null} */}
-      {/* {showMenu ? <Sidebar  /> : null} */}
       <div className="homeContainer">
         <div className="homeLeftbar">
         <Sidebar  />
