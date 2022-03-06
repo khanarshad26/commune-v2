@@ -20,6 +20,7 @@ import Signup2 from "./pages/signup2/Signup2";
 import AddCell from "./pages/institute/addCell/AddCell";
 import CellHome from "./pages/cellHome/CellHome";
 import Topbar from "./components/topbar/Topbar.jsx";
+import Sidebar from "./components/sidebar/Sidebar";
 import { useState } from "react";
 
 import {
@@ -38,6 +39,8 @@ import { useSelector } from 'react-redux';
 function App() {
   const user = useSelector(state => state.user.user);
   const [showMessage, setShowMessage] = useState(false);
+
+  const showMenu = useSelector(state => state.utility.showMenu);
   
   // console.log("App",user)
   const connections = [{
@@ -95,6 +98,7 @@ function App() {
 
       <Router>
         {user ? <Topbar setShowMessage={setShowMessage} showMessage={showMessage} /> : null}
+        {showMenu ? <Sidebar  /> : null}
         <Routes>
           {/* {(user.type==="Student" || user.type==="Faculty")} */}
           <Route exact path="/" element={user ? <HomePage showMessage={showMessage}/> : <LandingPage />} ></Route>

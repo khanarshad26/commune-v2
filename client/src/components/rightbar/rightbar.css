@@ -10,7 +10,7 @@
 
 .rightbar {
   flex: 3;
-  overflow-x: auto;
+  /* overflow-x: auto; */
   /* display: none; */
 }
 

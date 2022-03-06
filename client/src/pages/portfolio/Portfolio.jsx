@@ -38,20 +38,20 @@ export default function Portfolio() {
 
           <div className="portfolioTopLeft">
 
-            <div className="name">Arshad Khan</div>
-            <div className="address">Morena MP</div>
+            <div className="name">{user.username || "Name"}</div>
+            {user?.address?.current ? <div className="address">{user?.address?.current?.city + ", "+user?.address?.current?.state }</div> : null}
             
-            <div className="emailnPhone">
+            {user.email ?<div className="emailnPhone">
               <AttachEmailOutlinedIcon className="shareIcon"
                 htmlColor="#0077b6" />
-              <div className="portfolioDetail">arshadkhan2600@gmail.com</div>
-            </div>
+               <div className="portfolioDetail">{user?.email}</div>
+            </div> : null}
             
-            <div className="emailnPhone">
+            { user.phone ?<div className="emailnPhone">
               <LocalPhoneOutlinedIcon className="shareIcon"
                 htmlColor="#0077b6" />
-              <div className="portfolioDetail">+91 9669430311</div>
-            </div>
+                <div className="portfolioDetail">{user?.phone}</div>
+            </div> : null}
 
           </div>
 

@@ -117,73 +117,73 @@
 
 @media only screen and (max-width:425px){
 
-.shareOption1{
-  align-items: center;
-  justify-content: flex-end;
-}
-.shareButton {
-  border: none;
-  padding: 4px;
-  margin-right: 2px;
-}
-.shareOptionText {
-  font-size: 14px;
-  font-weight: 500;
-  margin-right: -54px;
-}
-.shareOption {
+  .shareOption1{
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .shareButton {
+    border: none;
+    padding: 4px;
+    margin-right: 2px;
+  }
+  .shareOptionText {
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: -54px;
+  }
+  .shareOption {
+    
+    margin-right: 0px;
+    
+  }
+  .shareOptions1{
+    width:15%;
+  }
+  .shareOptions2{
+    width:30%;
+  }
+  .shareOptions3{
+    width:15%;
+  }
+  .selectShare {
+    width: 60%;
+  }
+  }
+  @media only screen and (max-width:375px){
+    .shareWrapper {
+         padding: 4px;
+      /* margin-top: 13px; */
+  }
+  .shareOption1{
   
-  margin-right: 0px;
-  
-}
-.shareOptions1{
-  width:15%;
-}
-.shareOptions2{
-  width:30%;
-}
-.shareOptions3{
-  width:15%;
-}
-.selectShare {
-  width: 60%;
-}
-}
-@media only screen and (max-width:375px){
-  .shareWrapper {
-       padding: 4px;
-    /* margin-top: 13px; */
-}
-.shareOption1{
-
-  align-items: center;
-  justify-content: flex-end;
-}
-.shareButton {
-  border: none;
-  padding: 4px;
-  margin-right: 2px;
-}
-.shareOptionText {
-  font-size: 14px;
-  font-weight: 500;
-  margin-right: -54px;
-}
-.shareOption {
-  
-  margin-right: 0px;
-  
-}
-.shareOptions1{
-  width:15%;
-}
-.shareOptions2{
-  width:30%;
-}
-.shareOptions3{
-  width:15%;
-}
-.selectShare {
-  width: 60%;
-}
-}
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .shareButton {
+    border: none;
+    padding: 4px;
+    margin-right: 2px;
+  }
+  .shareOptionText {
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: -54px;
+  }
+  .shareOption {
+    
+    margin-right: 0px;
+    
+  }
+  .shareOptions1{
+    width:15%;
+  }
+  .shareOptions2{
+    width:30%;
+  }
+  .shareOptions3{
+    width:15%;
+  }
+  .selectShare {
+    width: 60%;
+  }
+  }

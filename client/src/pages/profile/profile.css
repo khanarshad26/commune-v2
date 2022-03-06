@@ -2,8 +2,13 @@
     display: flex;
 }
 
-.profileRight{
+.profileRight {
     flex: 9;
+    width: 100vw;
+}
+
+.profileSidebar{
+    flex: 3;
 }
 
 .profileImg{
@@ -17,18 +22,18 @@
     height: 20px;
     position: relative;
     border-radius: 50%;
-    top: -75%;
+    top: 10%;
     left: 90%;
     border: solid 3px white;
     background-color: #e2e6f6;
 }
 
-.profileCover{
-    height: 320px;
+.profileCover {
+    height: 270px;
     position: relative;
 }
 
-.profileCoverImg{
+.profileCoverImageTop{
     width: 93%;
     height: 200px;
     margin: 20px 0px 20px 20px;
@@ -53,8 +58,8 @@
     height: 20px;
     position: relative;
     border-radius: 50%;
-    top: -45px;
-    left: 17%;
+    top: 60%;
+    left: 80%;
     border: solid 3px white;
     background-color: #e2e6f6;
 }
@@ -83,4 +88,33 @@
 
 .profileRightBottomright{
     margin-right: 20px;
+}
+
+@media only screen and (max-width:425px){
+
+    .profileCoverImageTop {
+        width: 100vw;
+    }
+
+    .profileRightBottomright {
+        margin-right: 0px;
+
+    }
+
+    .profileCoverImageTop {
+        /* width: 93%; */
+        height: 200px;
+        margin: 0px;
+        border-radius: 0px;
+    }
+
+.profileRightBottom {
+    display: flex;
+    width: 100vw;
+}
+
+.profileSidebar{
+    display: none;
+}
+
 }

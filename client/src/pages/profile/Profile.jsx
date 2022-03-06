@@ -95,12 +95,15 @@ export default function Profile() {
     <>
        
       <div className="profile1">
-        <Sidebar />
+        <div className="profileSidebar">
+          <Sidebar />
+        </div>
+        
         <div className="profileRight">
           <div className="profileRightTop">
             <div className="profileCover">
-              <div className="profileCoverImageTop">
-                <img className="profileCoverImg" src="/assets/coverImage.png" alt=" " />
+
+              <div className="profileCoverImageTop" style={{backgroundImage: "url(/assets/coverImage.png)" }}>
                 <label htmlFor="file">
                   <img
                     src="/assets/plus.png"
@@ -117,15 +120,14 @@ export default function Profile() {
                   />
                 </label>
               </div>
-              <div className="profileUserImg">
-                <img
+
+              <div className="profileUserImg" style={{backgroundImage: "url(/assets/noAvatar.png)" }}>
+                {/* <img
                   src="/assets/noAvatar.png"
                   className="profileImg"
                   alt=" "
-                />
-              </div>
-              {/* <img src="" className="profileUserImgAdd" /> */}
-                <label htmlFor="file">
+                /> */}
+                 <label htmlFor="file">
                   <img
                     src="/assets/plus.png"
                     className="profileUserImgAdd"
@@ -140,7 +142,9 @@ export default function Profile() {
                     onChange={(e) => setFile(e.target.files[0])}
                   />
                 </label>
+              </div>
             </div>
+
             <div className="profileInfo1">
               <h4 className="profileInfoName">{user.username}</h4>
               <span className="profileInfoDesc">--</span>

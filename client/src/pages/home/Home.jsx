@@ -43,7 +43,7 @@ export default function Home({ showMessage }) {
     <>
       {/* <Topbar setNotification ={setNotification} notification={notification} setMessaging={setMessaging} messaging={messaging}/> */}
       {/* {showMenu ? <Sidebar  /> : null} */}
-      {showMenu ? <Nav  /> : null}
+      {/* {showMenu ? <Sidebar  /> : null} */}
       <div className="homeContainer">
         <div className="homeLeftbar">
         <Sidebar  />
