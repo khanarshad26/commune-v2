@@ -10,7 +10,7 @@ const utilitySlice = createSlice({
   initialState: initialStateValue,
   reducers: {
     setShowMenu : (state, action) => {
-      state.showMenu = !state.showMenu;
+      state.showMenu = action?.payload || !state.showMenu;
     },
     setDarkTheme : (state) => {
       state.darkTheme = !state.darkTheme;

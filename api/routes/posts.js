@@ -93,6 +93,16 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+//get all posts
+router.get("/all/:id", async (req, res) => {
+  try {
+    const posts = await Post.find();
+    res.status(200).json(posts);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 //get timeline posts
 router.get("/timeline/all/:type/:id", async (req, res) => { //user_id
   try {
@@ -110,7 +120,12 @@ router.get("/timeline/all/:type/:id", async (req, res) => { //user_id
         return Post.find({ userId: friendId });
       })
     );
-    res.json(userPosts.concat(...friendPosts))
+    res.json(userPosts.concat(...friendPosts));
+    }
+    else if(req.params.type === "Club" || req.params.type === "Association"){
+      const currentUser = await Cell.findById(req.params.id);
+      const userPosts = await Post.find({ userId: currentUser._id, userType : "Cell" || "Association" });
+      res.json(userPosts)
     }
   } catch (err) {
     res.status(500).json(err);

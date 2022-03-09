@@ -1,23 +1,18 @@
 import React, { useState, useEffect } from "react";
-import Topbar from "../../components/topbar/Topbar.jsx";
-import InstituteSidebar from "../institute/instituteSidebar/InstituteSidebar.jsx"
 import Feed from "../../components/feed/Feed.jsx";
 import CellIntro from "./cellInto/CellIntro.jsx";
-import Photos from "./photos/Photos.jsx";
-import Videos from "./videos/Videos.jsx";
+import Photos from "../institute/photos/Photos.jsx";
+import Videos from "../institute/videos/Videos.jsx";
 import EventCard from "../../components/eventCard/EventCard.jsx";
 import { Link } from "react-router-dom";
 import "./cell.css";
-import { useParams } from "react-router";
 import axios from "axios";
 import CellAbout from "./cellAbout/CellAbout.jsx";
 import CellSidebar from "./cellSidebar/CellSidebar.jsx"
 import { useSelector } from 'react-redux';
 
 const CellHome = () => {
-
   const user = useSelector(state => state.user.user);
-
   const [cell, setCell] = useState({});
 
   const [showHome, setShowHome] = useState(true);
@@ -216,13 +211,13 @@ const CellHome = () => {
                     <select name="More" id="More" className="institutemore">
                       <option value="Select More">More</option>
                       <option value="teams">
-                        <a href="">Teams</a>
+                      Teams
                       </option>
                       <option value="Certificates">
-                        <a href="">Certificates</a>
+                      Certificates
                       </option>
                       <option value="Projects">
-                        <a href="">Projects</a>
+                      Projects
                       </option>
                     </select>
                   </li>

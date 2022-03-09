@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef, useContext} from 'react';
+import React, {useState, useEffect, useRef  } from 'react';
 import './commentBox.css';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
@@ -7,7 +7,7 @@ import {format} from 'timeago.js';
 import ThumbUpAltOutlinedIcon from "@mui/icons-material/ThumbUpAltOutlined";
 import { MoreVert } from "@material-ui/icons";
 
-const CommentBox = ({post}) => {
+const CommentBox = ({post, setShowCommentBox}) => {
   const user = useSelector(state => state.user.user);
     const [comments, setComments] = useState([]);
     const commentText = useRef();
@@ -25,6 +25,7 @@ const CommentBox = ({post}) => {
 
     const cancelHandler = () => {
         commentText.current.value = "";
+        setShowCommentBox(false);
     }
 
     const commentHandler = async() => {
@@ -35,7 +36,6 @@ const CommentBox = ({post}) => {
       userId: user._id,
       commentorName : user.username, 
       profilePicture : user.profilePicture || "/assets/noAvatar.png",
-      commentorName : user.type
     };
     // console.log(newComment);
     try {

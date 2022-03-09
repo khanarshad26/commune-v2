@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
 import Portfolio from "./pages/portfolio/Portfolio";
@@ -14,74 +14,37 @@ import EventLayout from "./pages/eventLayout/EventLayout";
 import Connections from "./pages/connections/Connections";
 import Forum from "./pages/forum/Forum";
 import Teams from "./pages/teams/Teams";
-import Bookmarks from "./pages/bookmarks/Bookmarks";
 import Cell from "./pages/cell/Cell";
 import Signup2 from "./pages/signup2/Signup2";
 import AddCell from "./pages/institute/addCell/AddCell";
 import CellHome from "./pages/cellHome/CellHome";
 import Topbar from "./components/topbar/Topbar.jsx";
 import Sidebar from "./components/sidebar/Sidebar";
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
+import Nav from "./components/topbar/Nav.jsx";
+import ProfilePublic from "./pages/profilePublic/ProfilePublic";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from "react-router-dom";
-// import { useSelector } from 'react-redux'; 
 import Institute from "./pages/institute/Institute";
 import { useSelector } from 'react-redux';
+import './app.css';
 
 
 
 
 function App() {
   const user = useSelector(state => state.user.user);
+  const showMenu = useSelector(state => state.utility.showMenu);
   const [showMessage, setShowMessage] = useState(false);
 
-  const showMenu = useSelector(state => state.utility.showMenu);
-  
-  // console.log("App",user)
-  const connections = [{
-    username: "Arshad Khan",
-    // coverimgurl :'/assets/person/4.jpeg',
-    imgurl: '/assets/person/4.jpeg',
-    position: "UI Developer",
-    organization: "Google"
-
-  },
-  {
-    username: "Arshad Khan",
-    // coverimgurl :'/assets/person/4.jpeg',
-    imgurl: '/assets/person/4.jpeg',
-    position: "UI Developer",
-    organization: "Google"
-
-  },
-  {
-    username: "Arshad Khan",
-    // coverimgurl :'/assets/person/4.jpeg',
-    imgurl: '/assets/person/4.jpeg',
-    position: "UI Developer",
-    organization: "Google"
-
-  },
-  {
-    username: "Arshad Khan",
-    // coverimgurl :'/assets/person/4.jpeg',
-    imgurl: '/assets/person/4.jpeg',
-    position: "UI Developer",
-    organization: "Google"
-
-  }, {
-    username: "Arshad Khan",
-    // coverimgurl :'/assets/person/4.jpeg',
-    imgurl: '/assets/person/4.jpeg',
-    position: "UI Developer",
-    organization: "Google"
-
-  }]
+  useEffect(() => {
+    localStorage.setItem('user',JSON.stringify(user));
+    console.log("app user is saving in local host due to user data change or app rerendering due to other reasons");
+  },[user])
 
   const HomePage = () => {
     return (
@@ -98,11 +61,14 @@ function App() {
 
       <Router>
         {user ? <Topbar setShowMessage={setShowMessage} showMessage={showMessage} /> : null}
-        {showMenu ? <Sidebar  /> : null}
+        {showMenu ? <div className="mobileScreenSidebar" >
+        <Sidebar />
+        </div> : null}
+       {user ? <div className="homeDownbar">
+          <Nav />
+        </div> : null}
         <Routes>
-          {/* {(user.type==="Student" || user.type==="Faculty")} */}
           <Route exact path="/" element={user ? <HomePage showMessage={showMessage}/> : <LandingPage />} ></Route>
-          <Route path="/landing" element={<LandingPage />} ></Route>
           <Route path="/login" element={user ? <Navigate to="/" /> : <Signin />} ></Route>
           <Route path="/register" element={user ? <Navigate to="/" /> : <Signup />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
@@ -113,22 +79,19 @@ function App() {
           <Route path="/workshop/:id" element={<WorkshopLayout />}></Route>
           <Route path="/project/:id" element={<ProjectLayout />}></Route>
           <Route path="/event/:id" element={<EventLayout />}></Route>
-          <Route path="/myconnections" element={<Connections connections={connections} />}></Route>
+          <Route path="/myconnections" element={<Connections />}></Route>
           <Route path="/forum" element={<Forum />}></Route>
           <Route path="/team" element={<Teams />}></Route>
           <Route path="/event/:id" element={<EventLayout />}></Route>
-          <Route path="/bookmark" element={<Bookmarks />}></Route>
           <Route path="/institute" element={<Institute />}></Route>
           <Route path="/club/:id" element={<Cell />}></Route>
           <Route path="/association/:id" element={<Cell />}></Route>
           <Route path="/logintest" element={<Signin />} ></Route>
           <Route path="/registertest" element={<Signup />}></Route>
           <Route path="/signup" element={user ? <Navigate to="/" /> : <Signup2 />}></Route>
-          {/* <Route path="/project/:id" element={<ProjectLayout />}></Route> */}
+          <Route path="/profile/:id" element={<ProfilePublic />}></Route>
           <Route path="/:type" element={<AddCell />}></Route>
-
         </Routes>
-
       </Router>
     </>
   );

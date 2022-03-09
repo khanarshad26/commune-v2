@@ -1,5 +1,5 @@
 import React, {useEffect, useState } from "react";
-import { useContext } from "react";
+// import { useContext } from "react";
 import { useParams } from "react-router";
 import "./eventLayout.css";
  

@@ -1,6 +1,5 @@
 .share {
   width: 100%;
-  /* height: 170px; */
   border-radius: 10px;
   -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
   box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
@@ -8,7 +7,6 @@
 
 .shareWrapper {
   padding: 10px;
-  /* margin-top: 20px; */
 }
 
 .shareTop {
@@ -40,14 +38,21 @@
 
 .shareBottom {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: inherit;
 }
 
 .shareOption{
     display: flex;
     margin-left: 20px;
     width: 100%;
+}
+
+.shareTypeOption{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex: none;
+  width: 25%;
 }
 
 .shareOption1{
@@ -101,17 +106,17 @@
 .shareOption{
   display: flex;
   align-items: center;
-  margin-right: 15px;
   cursor: pointer;
+  flex: none;
+  width: 25%;
 }
 .selectShare {
-  border: 1px solid #ccc;
+  border: none;
   text-decoration: none;
   color: black;
   background-color: white;
   height: 30px;
-  width: 150px;
- font-size: 16px;
+  font-size: 16px;
 }
 
 
@@ -126,30 +131,36 @@
     padding: 4px;
     margin-right: 2px;
   }
+
   .shareOptionText {
     font-size: 14px;
     font-weight: 500;
     margin-right: -54px;
   }
+
   .shareOption {
-    
     margin-right: 0px;
-    
   }
+
   .shareOptions1{
     width:15%;
   }
+
   .shareOptions2{
     width:30%;
   }
+
   .shareOptions3{
     width:15%;
   }
+
   .selectShare {
     width: 60%;
   }
-  }
-  @media only screen and (max-width:375px){
+
+}
+
+@media only screen and (max-width:375px){
     .shareWrapper {
          padding: 4px;
       /* margin-top: 13px; */
@@ -186,4 +197,11 @@
   .selectShare {
     width: 60%;
   }
-  }
+}
+
+.feedOption{
+    display: flex;
+    align-items: center;
+    margin-right: 12vw;
+    cursor: pointer;
+}

@@ -1,5 +1,5 @@
 import "./topbar.css";
-import { useState } from "react";
+// import { useState } from "react";
 import { Search } from "@material-ui/icons";
 import MenuIcon from '@mui/icons-material/Menu';
 import  {Link} from 'react-router-dom';
@@ -12,20 +12,20 @@ export default function Topbar() {
   const dispatch = useDispatch();
   const user = useSelector(state => state.user.user);
 
-  const notification_count = 0;
-  const msg_count = 0;
-  const [showMessage,setShowMessage] = useState(false);
+  // const notification_count = 0;
+  // const msg_count = 0;
+  // const [showMessage,setShowMessage] = useState(false);
 
-  const notificationHandler = () => {
-    // props.setNotification(!props.notification);
-    // props.setMessaging(false);
-  }
+  // const notificationHandler = () => {
+  //   // props.setNotification(!props.notification);
+  //   // props.setMessaging(false);
+  // }
 
-  const messagingHandler = () => {
-    // props.setMessaging(!props.messaging);
-    // props.setNotification(false);
-    setShowMessage(!showMessage);
-  }
+  // const messagingHandler = () => {
+  //   // props.setMessaging(!props.messaging);
+  //   // props.setNotification(false);
+  //   setShowMessage(!showMessage);
+  // }
 
   return (
     <div className="topbarContainer">

@@ -1,19 +1,18 @@
 import "./share.css";
-import { EventEmitter } from 'events';
 import { Event, Cancel } from "@material-ui/icons"
 import SlowMotionVideoIcon from '@mui/icons-material/SlowMotionVideo';
 import PhotoCameraBackIcon from '@mui/icons-material/PhotoCameraBack';
 import axios from "axios";
 import { useSelector } from "react-redux";
-import { useContext, useRef, useState } from "react";
-import { Box } from "@material-ui/core";
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import { useRef, useState } from "react";
+import {setTimelinePosts} from '../../state/user.js';
+import { useDispatch } from "react-redux";
+
 
 export default function Share() {
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
+  const timelinePosts = useSelector((state) => state.user.timelinePosts);
   const desc = useRef();
   const [file, setFile] = useState(null);
   const [openfor, setOpenfor] = useState("Connections");
@@ -35,6 +34,15 @@ export default function Share() {
       img: user.profilePicture || "/assets/noAvatar.png",
       userType: user.type
     };
+
+    // console.log([...timelinePosts, newPost]);
+    // dispatch(setTimelinePosts([...timelinePosts, newPost]));
+
+    desc.current.value = "";
+    setFile(null);
+    setType("General");
+    setOpenfor("Connections");
+
     if (file) {
       const data = new FormData();
 
@@ -49,14 +57,15 @@ export default function Share() {
       }
     }
     try {
-      await axios.post("/api/post/", newPost);
-      desc.current.value = "";
-      setFile(null);
-      setType("General");
-      setOpenfor("Connections");
+      const res = await axios.post("/api/post/", newPost);
+      dispatch(setTimelinePosts([...timelinePosts, res.data]));
+      console.log(timelinePosts);
+      localStorage.setItem('timelinePosts',JSON.stringify(timelinePosts));
     } catch (err) {
       console.log(err);
     }
+    // dispatch(setTimelinePosts(...timelinePosts, newPost));
+    // localStorage.setItem('timelinePosts',JSON.stringify(timelinePosts));
   };
 
   return (
@@ -95,7 +104,7 @@ export default function Share() {
             </label>
           </div>
 
-          <div className="shareOption1 shareOptions2">
+          <div className="shareOption">
             <SlowMotionVideoIcon htmlColor="#0077b6" className="shareIcon" />
             {/* <span className="shareOptionText">Video</span> */}
             <select
@@ -114,7 +123,7 @@ export default function Share() {
             </select>
           </div>
 
-          <div className="shareOption1 shareOptions2">
+          <div className="shareTypeOption">
             <Event htmlColor="#00b4d8" className="shareIcon" />
             <select
               name="audience"
@@ -131,7 +140,7 @@ export default function Share() {
               </optgroup>
             </select>
           </div>
-          <div className="shareOptionsButton shareOptions3">
+          <div className="shareOption">
             <button type="submit" className="shareButton" onClick={shareHandler}>
               Share
             </button>

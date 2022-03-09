@@ -1,11 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
+import produce from 'immer'
+
 
 const initialStateValue = {
   user: JSON.parse(localStorage.getItem("user")) || null,
   isFetching: false,
   error: false,
-  profileFeeds: JSON.parse(localStorage.getItem("profileFeeds")) || null,
-  timelinePosts: JSON.parse(localStorage.getItem("profileFeeds")) || null,
+  profilePosts: JSON.parse(localStorage.getItem("profilePosts")) || [],
+  timelinePosts: JSON.parse(localStorage.getItem("timelinePosts")) || [],
+  allPosts: JSON.parse(localStorage.getItem("allPosts")) || [],
 };
 
 const userSlice = createSlice({
@@ -30,17 +33,34 @@ const userSlice = createSlice({
     logout: (state) => {
       state.user = null;
     },
-    saveProfileFeeds: (state, action) => {
+    setUser: (state, action) => {
+      state.user = action.payload;
+    },
+    setProfileFeeds: (state, action) => {
       state.profileFeeds = action.payload;
     },
-    getProfileFeeds: (state, action) => {
+    setTimelinePosts: (state, action) => {
       state.profileFeeds = action.payload;
     },
-    saveTimelinePosts: (state, action) => {
-      state.profileFeeds = action.payload;
+    setProfilePicture : (state, action) => {
+      // localStorage.setItem('user',JSON.stringify({...state.user, ...{profilePicture : action.payload}}));
+      // return produce(state, draft => {
+      //   draft.user.profilePicture = action.payload;
+      // })
+      // return {
+      //   ...state,
+      //   user : {
+      //     ...state.user,
+      //     profilePicture : action.payload
+      //   }
+      // }
+      state.user = {...state.user, profilePicture : action.payload};
     },
-    getTimelinePosts: (state, action) => {
-      state.profileFeeds = action.payload;
+    setCoverPicture : (state, action) => {
+      state.user.coverPicture = action.payload;
+    },
+    setAllPosts : (state, action) => {
+      state.allPosts = action.payload;
     },
   },
 });
@@ -50,9 +70,11 @@ export const {
   loginSuccess,
   loginFailure,
   logout,
-  saveProfileFeeds,
-  getProfileFeeds,
-  saveTimelinePosts,
-  getTimelinePosts,
+  setUser,
+  setProfileFeeds,
+  setTimelinePosts,
+  setProfilePicture,
+  setCoverPicture,
+  setAllPosts,
 } = userSlice.actions;
 export default userSlice.reducer;

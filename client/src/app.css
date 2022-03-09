@@ -1,0 +1,876 @@
+/* eventCard.css */
+
+
+@media only screen and (max-width:425px){
+    .eventCardContainer {
+      width: 100vw;
+      display: flex;
+      flex-direction: row;
+      text-align: left;
+  }
+  .eventThumbnailEvent {
+    width: 100%;
+    max-height: 300px;
+  }
+    /* .eventCardContainerLeft{
+      width: 50%;
+    } */
+    .eventCardContainerRight{
+      margin-left:2%;
+    }
+    .eventHost{
+      margin-left: 2%;
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+
+  }
+
+  /* share.css */
+
+  @media only screen and (max-width:425px){
+
+    .shareOption1{
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .shareButton {
+      border: none;
+      padding: 4px;
+      margin-right: 2px;
+    }
+    .shareOptionText {
+      font-size: 14px;
+      font-weight: 500;
+      margin-right: -54px;
+    }
+    .shareOption {
+      
+      margin-right: 0px;
+      
+    }
+    .shareOptions1{
+      width:15%;
+    }
+    .shareOptions2{
+      width:30%;
+    }
+    .shareOptions3{
+      width:15%;
+    }
+    .selectShare {
+      width: 100%;
+  }
+    }
+    @media only screen and (max-width:375px){
+      .shareWrapper {
+           padding: 4px;
+        /* margin-top: 13px; */
+    }
+    .shareOption1{
+    
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .shareButton {
+      border: none;
+      padding: 4px;
+      margin-right: 2px;
+    }
+    .shareOptionText {
+      font-size: 14px;
+      font-weight: 500;
+      margin-right: -54px;
+    }
+    .shareOption {
+      
+      margin-right: 0px;
+      
+    }
+    .shareOptions1{
+      width:15%;
+    }
+    .shareOptions2{
+      width:30%;
+    }
+    .shareOptions3{
+      width:15%;
+    }
+    .selectShare {
+      width: 60%;
+    }
+    }
+
+/* sidebar.css */
+
+
+@media only screen and (max-width:425px){
+    .sidebar {
+      width: 70%;
+      margin-left: 0px;
+      position: absolute;
+      top: 30px;
+      left: -25px;
+      height : auto;
+      z-index: 1;
+      border-radius: 0px;
+      background: white;
+  }
+  .sidebarWrapper {
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .homeSidebarWrapper {
+    margin: 0px;
+    height: 100vh;
+    position: fixed;
+    background: white;
+  }
+
+}
+
+  /* topbar.css  */
+
+
+  
+@media only screen and (max-width: 425px) {
+    .sidebarWrapper {
+      margin-top: 20px;
+    }
+  
+    .homeMenubar {
+      display: block;
+      align-self: center;
+      width: 8px;
+    }
+  
+    .navWrapper {
+      display: none;
+    }
+    .topbarLeft {
+      width: 60%;
+      flex: none;
+    }
+    .topbarRight {
+      width: 30%;
+      flex: none;
+    }
+  }
+
+  /* uploadStyles.css  */
+
+/* 
+  export const UploadFileBtn = styled.button
+
+  @media only screen and (max-width: 500px) {
+    width: 70%;
+  }
+
+  @media only screen and (max-width: 350px) {
+    width: 100%;
+  }
+  ;
+
+  export const PreviewList = styled.section`
+
+  @media only screen and (max-width: 400px) {
+    flex-direction: column;
+  }
+  ;
+
+  export const PreviewContainer = styled.section`
+  @media only screen and (max-width: 750px) {
+    width: 25%;
+  }
+
+  @media only screen and (max-width: 500px) {
+    width: 50%;
+  }
+
+  @media only screen and (max-width: 400px) {
+    width: 100%;
+    padding: 0 0 0.4em;
+  }
+} */
+
+/* workshopCard.css  */
+
+
+@media only screen and (max-width:425px){
+    .eventCardContainer {
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    .eventThumbnailEvent {
+      width: 100%;
+      max-height: 300px;
+    }
+    /* .eventCardContainerLeft{
+      width: 50%;
+    } */
+    .eventCardContainerRight{
+      margin-left:2%;
+    }
+    .eventTitle{
+      font-size: 17px;
+      font-weight: 400;
+    }
+    .eventHost{
+      margin-left: 2%;
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+  }
+
+  /* connections.css  */
+
+
+  @media only screen and (max-width:425px){
+    .connectionSidebar{
+      display: none;
+    }
+    .connectRequestHeading1 {
+      margin-left: 2%;
+    }
+    .connectRequestsWrapper {
+      display: flex;
+      width: 100vw;
+      margin: 0 1%;
+  }
+  .connectionsTitle {
+    margin-left: 2%;
+    padding-top: 5px;
+} 
+.connectionsWrapper {
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0px 0px 16px -8px rgb(0 0 0 / 68%);
+  width: 95vw;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  flex-wrap: wrap;
+}
+
+.connectionsTemplateContainer {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0px 0px 16px -8px rgb(0 0 0 / 68%);
+  width: 30%;
+  margin: 5px;
+  text-align: left;
+  min-width: 140px;
+}
+
+
+
+
+
+}
+
+/* style.css  */
+
+
+@media only screen and (max-width:425px){
+    .eventSidebar{
+        display: none;
+    }
+    .eventsList {
+        /* display: flex; */
+        width: 100vw;
+    }
+    .eventCardContainer {
+      width: 100vw;
+      margin: 1.5%;
+  }
+
+
+    
+}
+
+/* forum.css  */
+
+
+
+@media only screen and (max-width:425px){
+
+    .forumContainer {
+      display: flex;
+      flex-direction: column-reverse;
+      width: 100vw;
+  }
+
+  .forumTag {
+    margin: 2%;
+    width: 90vw;
+    padding: 10px;
+    min-height: 20vh;
+}
+
+    .forumLeftside {
+      margin: 1%;
+      width: 98vw;
+    }
+    .forumWrapper {
+      margin: 7px;
+      padding: 13px;
+    }
+    .forumHeading {
+      font-weight: 450;
+    }
+  
+  
+  }
+  
+  
+
+
+/* home.css  */
+
+
+@media only screen and (max-width:1005px){
+    .homeRightbar{
+        display: none;
+    }
+    .shareFeedContainer{
+        width: 65%;
+    }
+    /* .sidebar{
+        width: 25%;
+    } */
+}
+
+@media only screen and (max-width:425px){
+  .shareFeedContainer{
+      width: 95%;
+      margin: 2%;
+  }
+  .homeLeftbar{
+      display: none;
+  }
+  .sidebarList {
+    padding: 0;
+    margin: 20px 0px 0px 20px;
+    list-style: none;
+  } 
+}
+
+
+/* institute.css  */
+
+
+@media only screen and (max-width:425px){
+
+    .instituteSidebar{
+        display: none;
+    }
+
+    .instituteAdminContainer {
+      display: flex;
+      width: 100vw;
+      overflow: hidden;
+  }
+
+    .instituteRightbar {
+        width: 100vw;
+    }
+    .instituteclubTop {
+        width: 98vw;
+        margin: 1%;
+    }
+    .profileCoverImgInstitute {
+        width: 100%;
+        max-height: 200px;
+        object-fit: cover;
+        padding-top: 24px;
+    }
+    .instituteliveOption {
+        display: flex;
+        align-items: center;
+        position: relative;
+        top: 7px;
+        left: 85%;
+        width: 10%;
+    }
+    .instituteprofileImage{
+        width: 25%;
+    }
+    .instituteprofileUserImg {
+        width: 100px;
+        margin-left: 18px;
+        margin-top: -40px;
+    }
+    .cellName {
+      font-size: 25px;
+      margin-left: 22px;
+      margin-top: 10px;
+  }
+
+    .cellUserId {
+        margin-left: 10px;
+        display: flex;
+        margin-left: 20px;
+        flex-direction: column;
+    }
+    .instituteprofile {
+        display: flex;
+        margin-bottom: 3%;
+    }
+    .cellFollow{
+        display: flex;
+        align-items: center;
+        align-self: center;
+    }
+    .cellFollow {
+        display: flex;
+        align-items: center;
+        align-self: center;
+        margin-block-start: -4px;
+        width: 100%;
+    }
+    .institutefollow {
+        width: 50%;
+        margin: 0;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-20%);
+    }
+    .institutefollowButton {
+        margin-left: 73%;
+        width: 56%;
+        border-radius: 25px;
+        background-color: #85e585;
+        font-size: 18px;
+    }
+    .instituteaboutLeft {
+        width: 100vw;
+    }
+    .instituteabout {
+        display: flex;
+        margin: 10px -51px;
+    }
+    .clubHome {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+    }
+    .instituteclubBottomLeft {
+        width: 98vw;
+        margin-top: 0px;
+        margin: 1%;
+    }
+    .instituteclubBottomRight {
+      width: 98vw;
+      margin: 1%;
+      margin-top: 10px;  
+    }
+
+    .feed {
+        margin-top: -5%;
+    }
+    
+}
+
+/* addCell.css  */
+
+
+@media only screen and (max-width:425px){
+    .addCellShadowBox {
+        text-align: left !important;
+        /* margin: 1%; */
+        /* margin-left: -3%; */
+        margin-top: 2%;
+    }
+
+    .shadowBoxText {
+        padding-bottom: 7px;
+        font-weight: 450;
+    }
+    .halfSection {
+      display: flex;
+      flex-direction: column;
+      /* width: 100vw; */
+  }
+    .halfInputContainer {
+        width: 70%;
+    }
+    .fullSection {
+        padding-left: 10px;
+        width: 72%;
+    }
+}
+
+/* portfolio.css  */
+
+@media only screen and (max-width:425px){
+
+    .portfolioTop {
+        margin: 15px 1%;
+        width: 98vw;
+    }
+    .portfolioTopImage {
+        margin-left: 3%;
+        margin-right: 15px;
+    }
+    .portfolioShareText {
+        align-self: center;
+        margin-right: 9px;
+    }
+    .portfolioBottom {
+        display: flex;
+        flex-direction: column;
+    }
+    .portfolioBottomLeft {
+      flex: 25% 1;
+      margin: 2%;
+      max-height: 50vh;
+      text-align: left;
+      margin-bottom: 15px;
+  }
+    .portfolioBottomRight {
+        flex: 75% 1;
+        margin: 0 0;
+    }
+    .shadowBox {
+      display: flex;
+      flex-direction: column;
+      /* padding: 14px; */
+      min-height: 150px;
+      margin: 2% 2%;
+  }
+
+
+}
+
+/* profile.css  */
+
+
+
+@media only screen and (max-width:425px){
+
+    .profileCoverImageTop {
+        width: 100vw;
+    }
+
+    .profileRightBottomright {
+        margin-right: 0px;
+
+    }
+
+    .profileCoverImageTop {
+        /* width: 93%; */
+        height: 200px;
+        margin: 0px;
+        border-radius: 0px;
+    }
+
+    .profileRightBottom {
+        display: flex;
+        width: 100vw;
+        flex-direction: column-reverse;
+    }
+
+    .profileSidebar{
+        display: none;
+    }
+    .rightbarWrapper {
+        padding: 20px 0px 0 0;
+    }
+    .container {
+        width: 88vw;
+        margin-left: 5px;
+    }
+    
+    .portfolioShare {
+      display: flex;
+      position: absolute;
+      top: 250px;
+      right: 20px;
+  }
+}
+
+/* projects.css  */
+
+@media only screen and (max-width:425px){
+    .projectSidebar{
+        display: none;
+    }
+    
+    }
+
+    /* signin.css  */
+
+    @media only screen and (max-width:1005px){
+        .signupBox {
+            width: 50%;
+        }
+    }
+    
+    @media only screen and (max-width:425px){
+        .signupBox {
+            width: 90%;
+        }
+    }
+
+    /* signup.css  */
+
+
+    @media only screen and (max-width:425px){
+        .signupBox {
+            width: 90%;
+        }
+    }
+
+
+    /* signup2.css  */
+
+    
+@media only screen and (max-width:425px){
+    .signupBox {
+        width: 90%;
+    }
+}
+
+/* team.css  */
+
+
+@media only screen and (max-width:425px){
+    .eventTitle{
+      margin-left: 1%;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .eventHost{
+      margin-left: 1%;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    
+  
+  
+  
+  }
+
+/* workshop.css  */
+
+
+@media only screen and (max-width:425px){
+    .eventPageRight {
+      padding: 0;
+      width: 100vw;
+  }
+    .commonLayoutHeader {
+        display: flex;
+        margin: 5px 0;
+    }
+    .workshopSidebar{
+        display: none;
+    }
+    .workshopPageRight {
+        margin: 1%;
+        padding: 0;
+    }
+
+    /* sidebar */
+  .connectionSidebarWrapper{
+  display: none;
+}
+
+.PagesSidebarWrapper{
+  display: none;
+}
+
+.share {
+  margin-bottom: 20px;
+}
+
+.post {
+  margin: 10px 0;
+}
+
+.friendsContainer {
+  width: 88vw;
+  margin-left: 5px;
+  margin-bottom: 20px;
+}
+
+.feedOptions5 {
+  display: flex;
+  margin: 5px;
+  align-self: center;
+  width: 80vw;
+  margin-right: -1;
+}
+
+.sendfeedOption{
+  display: none;
+}
+
+
+.sharefeedOption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  /* width: 25%; */
+  margin-left: 20%;
+}
+
+.commentfeedOption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex: none;
+  /* width: 25%; */
+  width: 15%;
+  margin: 0 3%;
+}
+
+
+.likefeedOption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex: none;
+  width: 25%;
+  margin: 0 3%;
+}
+
+.instituteabout {
+  display: none;
+  margin: 10px -51px;
+}
+
+.coverUserImgAdd {
+  left: 85%;
+}
+
+.shareTypeOption{
+  display: none;
+
+}
+
+.righttopbar {
+  display: flex;
+  flex: 50% 1;
+  align-items: right;
+}
+
+.lefttopbar {
+  display: flex;
+  flex: 50% 1;
+  align-items: left;
+}
+
+.AddCellRightbar {
+  flex: 8.5 1;
+  width: 100vw;
+}
+
+/* .fullScreen{
+  display : none;
+} */
+
+.mobileScreen{
+  display: block;
+}
+
+.commonLayoutHeaderRight{
+  display: none;
+}
+
+.commonLayoutHeaderRight {
+  display: none;
+  flex: 10% 1;
+}
+
+.learnMore {
+  display: none;
+}
+
+.projectThumbnail {
+  width: 40%;
+  /* max-height: 97px; */
+  /* border-radius: 10px; */
+  background-color: #e2e6f6;
+  min-height: 130px;
+}
+
+.projectCardContainer1 {
+  width: 95vw;
+  margin: 0 3% 10px 3%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 16px -8px rgb(0 0 0 / 68%);
+  display: flex;
+  flex-direction: row;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+}
+
+.commonLayoutHeaderTeams {
+  margin: 10px 0 10px 0;
+}
+
+.cellUsername {
+  font-weight: 500;
+}
+
+}
+
+.mobileScreenSidebar{
+  display: none;
+}
+
+@media only screen and (max-width:660px){
+  .sendfeedOption{
+    display: none;
+  }
+
+  .mobileScreenSidebar{
+    display: block;
+  }
+
+  .fullScreen {
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolioTopEdit {
+  margin: 20px;
+  right: 0;
+  position: absolute;
+}
+}
+
+@media only screen and (max-width:365px){
+  .portfolioTop {
+    margin: 15px 1%;
+    width: 98vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolioTopEdit {
+  margin: 20px;
+  right: 0;
+  position: absolute;
+  top: 70px;
+}
+
+.portfolioTopImage {
+  margin: 8%;
+}
+
+.portfolioShare {
+  /* display: flex; */
+  position: relative;
+  left: 70%;
+  top: 0;
+}
+
+}
+

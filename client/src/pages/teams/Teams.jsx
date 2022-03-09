@@ -48,7 +48,9 @@ const Teams = () => {
     <>
        
       <div className="eventPageContainer">
+      <div className="PagesSidebarWrapper">
         <Sidebar />
+        </div>
         <div className="teamPageRight">
           <div className="yourEvents">
             

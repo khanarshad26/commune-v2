@@ -1,6 +1,6 @@
 import "./post.css";
 import { MoreVert } from "@material-ui/icons";
-import { useContext, useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { format } from "timeago.js";
 import { Link } from "react-router-dom";
@@ -72,9 +72,9 @@ export default function Post({ post }) {
 
         {/* ___post new bottom_____ */}
         <div className="shareBottom">
-          <div className="shareOptions5">
+          <div className="feedOptions5">
 
-            <div className="shareOption" onClick={likeHandler}>
+            <div className="likefeedOption" onClick={likeHandler}>
               {!isLiked ? (
                 <>
                   <ThumbUpAltOutlinedIcon
@@ -91,7 +91,7 @@ export default function Post({ post }) {
               )}
             </div>
 
-            <div className="shareOption">
+            <div className="commentfeedOption">
               <ChatBubbleOutlineOutlinedIcon
                 className="shareIcon"
                 htmlColor="#0077b6"
@@ -104,19 +104,19 @@ export default function Post({ post }) {
               </span>
             </div>
 
-            <div className="shareOption">
+            <div className="sharefeedOption">
               <ShareIcon htmlColor="#00b4d8" className="shareIcon" />
               <span className="shareOptionText">Share</span>
             </div>
             
-            <div className="shareOption">
+            <div className="sendfeedOption">
               <SendIcon htmlColor="#00b4d8" className="shareIcon" />
               <span className="shareOptionText">Send</span>
             </div>
           </div>
         </div>
       </div>
-      {showCommentBox ? <CommentBox post={post} /> : null}
+      {showCommentBox ? <CommentBox post={post} setShowCommentBox={setShowCommentBox} /> : null}
     </div>
   );
 }

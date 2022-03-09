@@ -1,15 +1,15 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid';
-import "./Contact.css"
+import "./contact.css"
 
 const Contact = ({ contact, setContact }) => {
 
     const users = ["Arshad","Aamir"];
-    const userPic = "assets/person/4.jpeg";
-    function handleClick(userName) {
-        console.log(userName);
-        setContact(userName);
-    }
+    // const userPic = "assets/person/4.jpeg";
+    // function handleClick(userName) {
+    //     console.log(userName);
+    //     setContact(userName);
+    // }
 
     return (
         <Grid container spacing={0}>

@@ -1,12 +1,17 @@
 .topbarContainer {
   height: 60px;
-  width: 100%;
+  width: 100vw;
   background-color: #09091c;
   display: flex;
   align-items: center;
   position: sticky;
   top: 0;
   z-index: 9999;
+}
+
+.navContainer{
+  background-color: #09091c;
+  display: flex;
 }
 
 .navWrapper{
@@ -166,9 +171,21 @@
     width: 8px;
   }
 
+  .navContainer{
+    background-color: #09091c;
+    display: flex;
+    position: relative;
+    bottom: 0;
+    width: 100vw;
+    align-items: center;
+    justify-content: right;
+    height: 50px;
+  }
+
   .navWrapper {
     display: none;
   }
+  
   .topbarLeft {
     width: 60%;
     flex: none;

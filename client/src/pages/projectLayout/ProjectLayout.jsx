@@ -78,7 +78,7 @@ const ProjectLayout = () => {
             <div className="skillWrapper">
             <div className="syllabusHeader">Skills Involved</div>
             <div className="skills">
-                {techStack.map(tech => {
+                {techStack?.map(tech => {
                   return <div className="tech">{tech}</div>
                 })}
             </div>
@@ -91,7 +91,7 @@ const ProjectLayout = () => {
               <div className="instructorHeading">Team : {teamName}</div>
             <div className="instructor">             
               <div className="instructorInfo">
-                {teamMembers.map(member => {
+                {teamMembers?.map(member => {
                   return <Member member={member}/>
                 })}
               </div>

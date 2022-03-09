@@ -206,12 +206,7 @@ text-decoration: none;
     font-family: system-ui;
     font-weight: 700;
 }
-.profileUserImg{
-    width: 150px;
-    border-radius: 76px;
-    margin-left: 25px;
-    margin-top: -45px;
-}
+
 .clubaName{
     font-size: 20px;
 }

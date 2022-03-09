@@ -100,16 +100,17 @@
 }
 .instituteaboutleftList{
     list-style: none;
-    
+    padding-left: 0;
     display: flex;
 }
+
 .instituteaboutleftList li{
     text-decoration: none;
     font-style: normal;
     margin-left: 10px;
     padding: 5px 10px;
     border: solid #00000073 0px;
-    background-color: #a6abaf17;
+    background-color: #ebf0f6;;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -123,8 +124,9 @@
     width: 50%;
 }
 .institutefollow{
-    width: 50%;
+    width: 45%;
     margin-right: 5px;
+    text-align: end;
 }
 .instituteabout{
     display: flex;
@@ -134,9 +136,12 @@
     margin-left: 50%;
     width: 30%;
     border-radius: 25px;
-    background-color: #85e585;
+    background-color: #ebf0f6;
     font-size: 18px;
+    border: none;
+    padding: 5px 0;
 }
+
 .instituteclubBottom{
     display: flex;
     /* margin: 0px 10%; */
@@ -211,6 +216,8 @@ text-decoration: none;
     border-radius: 76px;
     margin-left: 25px;
     margin-top: -45px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .clubaName{
     font-size: 20px;
@@ -376,3 +383,8 @@ text-decoration: none;
     margin: 5px;
     padding: 0px;
 }
+
+.instituteclubType{
+    font-size: small;
+    font-weight: 300;
+  }

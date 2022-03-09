@@ -1,11 +1,11 @@
-import React, {useContext} from "react";
-import {useEffect, useState} from "react";
+import React   from "react";
+// import {useEffect, useState} from "react";
 // import axios from "axios";
 import "./videos.css";
 
 const Videos = () => {
 
-  const [videos, setVideos] = useState(["/assets/images/sanju.jpg","/assets/images/sanju.jpg","/assets/images/sanju.jpg","/assets/images/sanju.jpg"]);
+  const videos = ["/assets/images/sanju.jpg","/assets/images/sanju.jpg","/assets/images/sanju.jpg","/assets/images/sanju.jpg"];
 
 
   const Video = ({video}) => {

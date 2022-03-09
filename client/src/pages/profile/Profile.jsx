@@ -1,35 +1,35 @@
 import "./profile.css";
- 
 import Sidebar from "../../components/sidebar/Sidebar";
 import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
-// import Intro from "../../components/intro/Intro";
-import { useSelector } from 'react-redux';
-import { useContext, useState, useEffect } from "react";
-// import AddIcon from '@mui/icons-material/Add';
+import {setCoverPicture, setProfilePicture, setTimelinePosts} from '../../state/user.js';
+import { useSelector, useDispatch } from 'react-redux';
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function Profile() {
   const [file, setFile] = useState(null);
+  const dispatch = useDispatch();
 
-  const [currrentUser, setCurrrentUser] = useState({});
   const user = useSelector(state => state.user.user);
-  
+  const timelinePosts = useSelector(state => state.user.timelinePosts);
 
-  const [posts, setPosts] = useState([]);
-
-  const fetchUser = async () => {
-    const res = await axios.get(`/api/user/${currrentUser._id}`);
-    setCurrrentUser(res.data);
+    const fetchPosts = async () => {
+    const res = await axios.get(`/api/post/timeline/all/${user?.type}/${user?._id}`);
+    dispatch(setTimelinePosts(
+      res.data.sort((p1, p2) => {
+        return new Date(p2.createdAt) - new Date(p1.createdAt);
+      }))
+    );
+    localStorage.setItem('timelinePosts',JSON.stringify(res.data));
   };
 
+  // console.log()
+
   useEffect(() => {
-    fetchUser();
+    fetchPosts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const [profilePicture, setProfilePicture] = useState("/assets/noAvatar.png");
-  const [coverPicture, setCoverPicture] = useState(currrentUser.coverPicture);
 
   const addProfileImage = async () => {
     if (file) {
@@ -37,6 +37,8 @@ export default function Profile() {
       const fileName = Date.now() + file.name;
       data.append("name", fileName);
       data.append("file", file);
+      dispatch(setProfilePicture("/assets/" + fileName));
+      console.log(user.profilePicture);
       try {
         await axios.post("/api/upload", data);
       } catch (err) {
@@ -49,14 +51,18 @@ export default function Profile() {
       } catch (err) {
         console.log(err);
       }
-      setProfilePicture(fileName);
+      // setProfilePicture(fileName);
+      
     }
+    
   };
+
+  console.log("user : ",user.profilePicture);
 
   const addCoverImg = async () => {
     if (file) {
       const data = new FormData();
-      const fileName = Date.now() + file.name;
+      const fileName = "/assets/"+Date.now() + file.name;
       data.append("name", fileName);
       data.append("file", file);
       try {
@@ -71,39 +77,23 @@ export default function Profile() {
       } catch (err) {
         console.log(err);
       }
-      setCoverPicture(fileName);
+      // setCoverPicture(fileName);
     }
   };
-
-  const fetchPosts = async () => {
-    const res = await axios.get(`/api/post/timeline/all/${user.type}/${user._id}`);
-    setPosts(
-      res.data.sort((p1, p2) => {
-        return new Date(p2.createdAt) - new Date(p1.createdAt);
-      })
-    );
-  };
-// 
-  useEffect(() => {
-    fetchPosts();
-     // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
-
-  // console.log(posts);
 
   return (
     <>
        
       <div className="profile1">
-        <div className="profileSidebar">
-          <Sidebar />
+      <div className="PagesSidebarWrapper">
+        <Sidebar />
         </div>
         
         <div className="profileRight">
           <div className="profileRightTop">
             <div className="profileCover">
 
-              <div className="profileCoverImageTop" style={{backgroundImage: "url(/assets/coverImage.png)" }}>
+              <div className="profileCoverImageTop" style={{backgroundImage: `url(${user.coverPicture})` }}>
                 <label htmlFor="file">
                   <img
                     src="/assets/plus.png"
@@ -121,7 +111,7 @@ export default function Profile() {
                 </label>
               </div>
 
-              <div className="profileUserImg" style={{backgroundImage: "url(/assets/noAvatar.png)" }}>
+              <div className="profileUserImg" style={{backgroundImage: `url(${user.profilePicture})` }}>
                 {/* <img
                   src="/assets/noAvatar.png"
                   className="profileImg"
@@ -150,9 +140,27 @@ export default function Profile() {
               <span className="profileInfoDesc">--</span>
             </div>
           </div>
+
+{/* _______________________________________________nav */}
+{/* 
+<div className="instituteabout">
+              <div className="instituteaboutLeft">
+                <ul className="instituteaboutleftList">
+                  <li >Home </li>
+                  <li >Projects</li>
+                  <li >Portfolio</li>
+                  <li >About</li>
+                </ul>
+              </div>
+              <div className="institutefollow">
+                <button className="institutefollowButton">Follow</button>
+              </div>
+            </div> */}
+
+{/* _______________________________________________nav end */}
           <div className="profileRightBottom">
             <div className="profileRightBottomright">
-            <Feed posts={posts} />
+            <Feed posts={timelinePosts} />
             </div>
             
             <Rightbar profile />

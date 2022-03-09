@@ -1,7 +1,7 @@
 import "./post.css";
 import { MoreHoriz } from "@material-ui/icons";
 import { Users } from "../../dummyData";
-import { useState, useContext } from "react";
+import { useState   } from "react";
 import ThumbUpAltOutlinedIcon from "@mui/icons-material/ThumbUpAltOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ShareIcon from "@mui/icons-material/Share";

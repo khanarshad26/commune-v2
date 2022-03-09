@@ -1,10 +1,9 @@
-import React, { useContext, useEffect, useState, useRef } from "react";
+import React, {    useEffect, useState, useRef } from "react";
 import "./workshop.css";
  
 import Sidebar from "../../components/sidebar/Sidebar";
  import { useSelector } from 'react-redux';
 import axios from "axios";
-import { Link } from "react-router-dom";
 import PhotoCameraBackIcon from "@mui/icons-material/PhotoCameraBack";
 import { Cancel } from "@material-ui/icons";
 import WorkshopCard from "../../components/workshopCard/WorkshopCard.jsx";
@@ -271,25 +270,32 @@ const Workshop = () => {
     <>
        
       <div className="workshopPageContainer">
+      <div className="PagesSidebarWrapper">
         <Sidebar />
+        </div>
         <div className="workshopPageRight">
           <div className="yourworkshops">
             <div className="commonLayoutHeader">
               <div className="commonLayoutHeaderLeft">
-                <div className="commonLayoutHeading" onClick={showworkshopHandler}>
-                  Your&nbsp;workshops
-                </div>
-                <div
-                  className="commonLayoutHeading"
-                  onClick={showCampusworkshopHandler}
-                >
-                  Campus&nbsp;workshops
-                </div>
-                <div
-                  className="commonLayoutHeading"
-                  onClick={showExploreworkshopHandler}
-                >
-                  Explore
+              <div className="fullScreen">
+                  <div
+                    className="commonLayoutHeading"
+                    onClick={showworkshopHandler}
+                  >
+                    Your&nbsp;Workshops
+                  </div>
+                  <div
+                    className="commonLayoutHeading"
+                    onClick={showCampusworkshopHandler}
+                  >
+                    Campus&nbsp;Workshops
+                  </div>
+                  <div
+                    className="commonLayoutHeading"
+                    onClick={showExploreworkshopHandler}
+                  >
+                    Explore
+                  </div>
                 </div>
               </div>
 
@@ -298,9 +304,14 @@ const Workshop = () => {
                   className="commonLayoutHeading"
                   onClick={showAddworkshopHandler}
                 >
-                  Create&nbsp;workshop
+                +&nbsp;Add
                 </div>
               </div>
+
+              <div className="mobileScreen">
+                <img src="/assets/plus.png" alt=" " className="eventAdd" onClick={showAddworkshopHandler}/>
+              </div>
+
             </div>
 
             {isOpen ? <Addworkshop /> : null}

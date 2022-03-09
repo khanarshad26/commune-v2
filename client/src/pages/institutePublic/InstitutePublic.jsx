@@ -1,4 +1,4 @@
-import React, {useState, useRef, useContext, useEffect} from "react";
+import React, {useState, useRef,    useEffect} from "react";
 import Topbar from "../../components/topbar/Topbar.jsx";
 import InstituteSidebar from "./institutePublicSidebar/InstitutePublicSidebar.jsx";
 import Share from "../../components/share/Share.jsx";

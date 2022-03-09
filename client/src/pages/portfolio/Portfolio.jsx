@@ -1,8 +1,6 @@
 import "./portfolio.css";
-import React, {useState, useContext, useEffect} from 'react';
-import axios from "axios";
+import React from 'react';
 import { useSelector } from 'react-redux';
- 
 import ConnectedAccounts from "../../components/connectedAccounts/ConnectedAccounts";
 import About from "../../components/portfolio/about/About";
 import Education from "../../components/portfolio/education/Education";

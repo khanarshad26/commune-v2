@@ -110,3 +110,16 @@
   position: relative;
   width: 290px;
 }
+
+.mobileScreen{
+    display : none;
+}
+
+.fullScreen {
+    display: flex;
+    flex-direction: row;
+}
+
+.eventAdd {
+    width: 30px;
+  }

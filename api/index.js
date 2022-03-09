@@ -22,6 +22,7 @@ import eventRoute from './routes/event.js';
 import experienceRoute from './routes/portfolio/experience.js';
 import interestRoute from './routes/portfolio/interest.js';
 import commentRoute from './routes/comment.js';
+import connectionRoute from './routes/connection.js';
 
 
 
@@ -89,7 +90,8 @@ app.use('/api/experience', experienceRoute);
 app.use('/api/achievement', achievementsRoute);
 app.use('/api/interest', interestRoute);
 
-app.use('/api/comment',commentRoute)
+app.use('/api/comment',commentRoute);
+app.use('/api/connection',connectionRoute);
 
 app.listen(PORT, () => {
   console.log("Backend server is running!");

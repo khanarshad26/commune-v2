@@ -1,33 +1,13 @@
 import "./cellSidebar.css";
-import { Group, HelpOutline, Event } from "@material-ui/icons";
+import { Group, Event } from "@material-ui/icons";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
-import AccountBoxOutlinedIcon from "@mui/icons-material/AccountBoxOutlined";
 import GroupWorkOutlinedIcon from "@mui/icons-material/GroupWorkOutlined";
-import NewspaperOutlinedIcon from "@mui/icons-material/NewspaperOutlined";
-import ForumOutlinedIcon from "@mui/icons-material/ForumOutlined";
-import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
-// import ScienceOutlinedIcon from "@mui/icons-material/ScienceOutlined";
-import FeedbackOutlinedIcon from "@mui/icons-material/FeedbackOutlined";
 import { Link } from "react-router-dom";
-import React, { useState, useEffect, useContext } from "react";
+import React from "react";
 import ScienceOutlinedIcon from '@mui/icons-material/ScienceOutlined';
-import axios from "axios";
-import { useSelector } from 'react-redux'; 
 
 
 const CellSidebar = () => {
-  const [cell, setCell] = useState({});
-  const user = useSelector(state => state.user.user);
-
-  const fetchCell = async() => {
-    try{
-      const res = await axios.get(`/api/cell/${user._id}`);
-    setCell(res.data);
-    }catch(err){
-      console.log(err);
-    }
-  }
-
   return (
     <div className="instituteSidebar ">
       <div className="sidebarWrapper">

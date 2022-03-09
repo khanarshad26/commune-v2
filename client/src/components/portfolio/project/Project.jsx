@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, { useState, useEffect,    useRef } from "react";
 import "./project.css";
 import { useSelector } from 'react-redux'; 
 import ModeEditOutlineIcon from "@mui/icons-material/ModeEditOutline";
 import axios from "axios";
-import {format} from "timeago.js"
+// import {format} from "timeago.js"
 
 const Project = () => {
   const user = useSelector(state => state.user.user);
@@ -109,14 +109,14 @@ const Project = () => {
   }
 
   const ProjectCard = ({ project }) => {
-    const from = new Date(project.from);
-    const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-    let to = new Date(project.to);;
-    if(project.to!==null){
-      to = month[to.getMonth()]+" "+to.getFullYear();
-    }else{
-      to = "in progress";
-    }
+    // const from = new Date(project.from);
+    // const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    // let to = new Date(project.to);
+    // if(project.to!==null){
+    //   to = month[to.getMonth()]+" "+to.getFullYear();
+    // }else{
+    //   to = "in progress";
+    // }
     return (
       <>
         <div className="educationCardContainer">

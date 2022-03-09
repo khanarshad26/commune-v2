@@ -1,13 +1,10 @@
-import React, {useState, useRef, useContext, useEffect} from "react";
-import Topbar from "../../components/topbar/Topbar.jsx";
+import React, {useState, useEffect} from "react";
 import InstituteSidebar from "./instituteSidebar/InstituteSidebar.jsx";
-import Share from "../../components/share/Share.jsx";
 import Feed from "../../components/feed/Feed.jsx";
 import ClubIntro from "./clubIntro/ClubIntro.jsx";
 import Photos from "./photos/Photos.jsx";
 import Videos from "./videos/Videos.jsx";
 import EventCard from "../../components/eventCard/EventCard.jsx";
-import AddCell from "../institute/addCell/AddCell.jsx";
 import { useSelector } from 'react-redux'; 
 import axios from "axios";
 import "./institute.css";
@@ -23,7 +20,6 @@ const Institute = () => {
     const [showAbout, setShowAbout] = useState(false);
     const [showEvent, setShowEvent] = useState(false);
     const [showWorkshop, setShowWorkshop] = useState(false);
-    const [type, setType] = useState("Club");
     const [posts, setPosts] = useState([]);
 
     const fetchPosts = async () => {
@@ -41,7 +37,7 @@ const Institute = () => {
     },[])
 
     // const [showInstituteRightBar, setShowInstituteRightBar] = useState(true);
-    const [showAddCell, setShowAddCell] = useState(false);
+    // const [showAddCell, setShowAddCell] = useState(false);
 
     const fetchCampusEvents = async () => {
       let id = "";
@@ -287,7 +283,7 @@ const Institute = () => {
     return (
         <>
           <div className="eventsList">
-            {campusEvents.map((event) => {
+            {campusworkshops.map((event) => {
               return <EventCard event={event} />;
             })}
           </div>
@@ -397,13 +393,13 @@ const workshopClickHandler = () => {
                     <select name="More" id="More" className="institutemore">
                       <option value="Select More">More</option>
                       <option value="teams">
-                        <a href="">Teams</a>
+                      Teams
                       </option>
                       <option value="Certificates">
-                        <a href="">Certificates</a>
+                      Certificates
                       </option>
                       <option value="Projects">
-                        <a href="">Projects</a>
+                      Projects
                       </option>
                     </select>
                   </li>

@@ -1,12 +1,12 @@
 import './addCell.css';
-import React, {useState, useEffect, useRef, useContext} from 'react';
+import React, {useState, useRef  } from 'react';
 import axios from 'axios';
 import PhotoCameraBackIcon from "@mui/icons-material/PhotoCameraBack";
 import { Cancel } from "@material-ui/icons";
 import { useSelector } from 'react-redux'; 
 import { useParams } from 'react-router';
 import {useNavigate} from 'react-router-dom';
-import Topbar from '../../../components/topbar/Topbar';
+ 
 import InstituteSidebar from '../instituteSidebar/InstituteSidebar';
 
   const AddCell = () => {

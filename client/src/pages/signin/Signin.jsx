@@ -1,10 +1,6 @@
 import React, { useRef } from "react";
 import "./signin.css";
 import { Link } from "react-router-dom";
-// import {useNavigate} from 'react-router-dom';
-// import axios from "axios";
-// import { AuthContext } from '../../context/AuthContext.js';
-import { useContext } from "react";
 import {useDispatch} from 'react-redux';
 import { loginCall } from "../../apiCalls";
 import { useState } from "react";

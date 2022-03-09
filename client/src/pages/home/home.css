@@ -8,6 +8,10 @@
     flex: 3;
 }
 
+.homeDownbar{
+    display: none;
+}
+
 .shareFeedContainer{
     display: flex;
     flex-direction: column;
@@ -45,5 +49,14 @@
     margin: 20px 0px 0px 20px;
     list-style: none;
   } 
+
+  .homeDownbar{
+      display: block;
+      overflow: hidden;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 10;
+  }
 }
 

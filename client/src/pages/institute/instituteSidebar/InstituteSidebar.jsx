@@ -1,24 +1,23 @@
 import "./instituteSidebar.css";
-import { Group, HelpOutline } from "@material-ui/icons";
+// import { Group, HelpOutline } from "@material-ui/icons";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import AccountBoxOutlinedIcon from "@mui/icons-material/AccountBoxOutlined";
 import GroupWorkOutlinedIcon from "@mui/icons-material/GroupWorkOutlined";
 import NewspaperOutlinedIcon from "@mui/icons-material/NewspaperOutlined";
 import ForumOutlinedIcon from "@mui/icons-material/ForumOutlined";
 import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
-import FeedbackOutlinedIcon from "@mui/icons-material/FeedbackOutlined";
-import { Link, useHistory } from "react-router-dom";
-import React, { useState, useEffect, useContext } from "react";
+// import FeedbackOutlinedIcon from "@mui/icons-material/FeedbackOutlined";
+import { Link } from "react-router-dom";
+import React, { useState, useEffect   } from "react";
 import axios from "axios";
 import {useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux'; 
+import {setInstitute, setClublist, setAssociationslist} from '../../../state/institute.js';
 
 export default function InstituteSidebar() {
-
-  const [institute, setInstitute] = useState({});
   const user = useSelector(state => state.user.user);
+  const institute = useSelector(state => state.institute);
   const navigate = useNavigate();
-  // const history = useHistory();
 
   const fetchInstitute = async () => {
     try {
@@ -32,7 +31,6 @@ export default function InstituteSidebar() {
   const associationClickedFunc = (association) => {
     console.log("asso",association._id);
     navigate(`/association/${association._id}`)
-    // history.push("/association/"+association._id)
   }
 
   useEffect(() => {
@@ -43,9 +41,6 @@ export default function InstituteSidebar() {
   const UpdatedList = () => {
     const [clubClicked, setClubClicked] = useState(false);
     const [associationClicked, setAssociationClicked] = useState(false);
-
-    const [clublist, setClublist] = useState([]);
-    const [associationslist, setAssociationslist] = useState([]);
 
     const fetchClublist = async () => {
       try {
@@ -80,7 +75,6 @@ export default function InstituteSidebar() {
     useEffect(() => {
       fetchClublist();
       fetchAssociationslist();
-      console.log(user.institute);
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     
@@ -109,13 +103,13 @@ export default function InstituteSidebar() {
               </Link>
             </div>
             <div className="updatedListViewBottom">
-              {clublist.map((club) => {
+              {institute.clubs.map((club) => {
                 return (
                   <Link
                     to={{ pathname: `/club/${club._id}` }}
                     className="sidebarListItem"
                   >
-                    <img src={club.profilePicture} className="sidebarIcon" />
+                    <img src={club.profilePicture} className="sidebarIcon" alt=" "/>
                     <span className="sidebarListItemText">{club.name}</span>
                   </Link>
                 );
@@ -147,7 +141,7 @@ export default function InstituteSidebar() {
               </Link>
             </div>
             <div className="updatedListViewBottom">
-              {associationslist.map((association) => {
+              {institute.associations.map((association) => {
                 return (
                   <div
                   onClick={() => associationClickedFunc(association)}
@@ -156,6 +150,7 @@ export default function InstituteSidebar() {
                     <img
                       src={association.profilePicture}
                       className="sidebarIcon"
+                      alt=" "
                     />
                     <span className="sidebarListItemText">
                       {association.name}

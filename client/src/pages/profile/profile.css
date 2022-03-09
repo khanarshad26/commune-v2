@@ -62,6 +62,8 @@
     left: 80%;
     border: solid 3px white;
     background-color: #e2e6f6;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .profileInfo1{
@@ -88,6 +90,7 @@
 
 .profileRightBottomright{
     margin-right: 20px;
+    flex: 5;
 }
 
 @media only screen and (max-width:425px){

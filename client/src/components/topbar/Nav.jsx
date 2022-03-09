@@ -1,10 +1,11 @@
 import React from 'react'
 import  {Link} from 'react-router-dom';
-import { Search, Chat, Notifications, Home, People, RssFeed } from "@material-ui/icons";
+import { Notifications, Home, People, RssFeed } from "@material-ui/icons";
 
 const Nav = () => {
   return (
     <>
+        <div className="navContainer">
           <Link to='/' className="topbarIconItem">
             <span className="topbarLink">
               <Home className="peopleIcon" />
@@ -45,6 +46,7 @@ const Nav = () => {
               <span className="iconText">Notifications</span>
             </span>
           </Link>
+        </div>
     </>
   )
 }

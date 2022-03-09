@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./addEvent.css";
- import { useSelector } from 'react-redux'; 
-import ModeEditOutlineIcon from "@mui/icons-material/ModeEditOutline";
+//  import { useSelector } from 'react-redux'; 
+// import ModeEditOutlineIcon from "@mui/icons-material/ModeEditOutline";
 import axios from "axios";
 
 const  AddEvent = ({isOpen}) => {
   // const {isOpen, setIsOpen} = props;
   const { user } = useContext(AuthContext);
-  const [ addEvents, setAddEvents] = useState([]);
+  // const [ addEvents, setAddEvents] = useState([]);
   const [toggle, setToggle] = useState(false);
 
   const institution = useRef();

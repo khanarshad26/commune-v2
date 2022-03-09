@@ -175,9 +175,13 @@ const UserSchema = new mongoose.Schema(
       type: String,
       default : ""
     },
+    tagline : {
+      type: String,
+      default : "",
+    },
     organization: {
       type: String,
-      default : ""
+      default : "",
     },
     educations:[{
       type : mongoose.Schema.Types.ObjectId,

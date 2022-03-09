@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React   from "react";
 // import {useEffect, useState} from "react";
  import { useSelector } from 'react-redux';
 // import axios from "axios";
@@ -26,7 +26,7 @@ const Friends = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="friendsContainer">
         <h4 className="rightbarTitle">Friends</h4>
         <div className="rightbarFollowings">
         { friends.map((friend) => {

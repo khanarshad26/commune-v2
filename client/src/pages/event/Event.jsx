@@ -1,17 +1,17 @@
-import React, { useContext, useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./style.css";
- 
+
 import Sidebar from "../../components/sidebar/Sidebar";
- import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 import axios from "axios";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 // import DropzoneComponent from "../../components/dropzone/Dropzone.jsx";
 import PhotoCameraBackIcon from "@mui/icons-material/PhotoCameraBack";
 import { Cancel } from "@material-ui/icons";
-import EventCard from '../../components/eventCard/EventCard.jsx'
+import EventCard from "../../components/eventCard/EventCard.jsx";
 
 const Event = () => {
-  const user = useSelector(state => state.user.user);
+  const user = useSelector((state) => state.user.user);
 
   const [events, setEvents] = useState([]);
   const [campusEvents, setCampusEvents] = useState([]);
@@ -77,7 +77,7 @@ const Event = () => {
         venue: venue.current.value,
         summary: summary.current.value,
         type: type.current.value,
-        institute : user.institute
+        institute: user.institute,
       };
       if (file) {
         const data = new FormData();
@@ -322,28 +322,58 @@ const Event = () => {
 
   return (
     <>
-      
       <div className="eventPageContainer">
-        <Sidebar />
+        <div className="PagesSidebarWrapper">
+          <Sidebar />
+        </div>
+
         <div className="eventPageRight">
           <div className="yourEvents">
             <div className="commonLayoutHeader">
               <div className="commonLayoutHeaderLeft">
-                <div className="commonLayoutHeading" onClick={showEventHandler}>
-                  Your&nbsp;Events
+                <div className="fullScreen">
+                  <div
+                    className="commonLayoutHeading"
+                    onClick={showEventHandler}
+                  >
+                    Your&nbsp;Events
+                  </div>
+                  <div
+                    className="commonLayoutHeading"
+                    onClick={showCampusEventHandler}
+                  >
+                    Campus&nbsp;Events
+                  </div>
+                  <div
+                    className="commonLayoutHeading"
+                    onClick={showExploreEventHandler}
+                  >
+                    Explore
+                  </div>
                 </div>
-                <div
-                  className="commonLayoutHeading"
-                  onClick={showCampusEventHandler}
-                >
-                  Campus&nbsp;Events
-                </div>
-                <div
-                  className="commonLayoutHeading"
-                  onClick={showExploreEventHandler}
-                >
-                  Explore
-                </div>
+
+                {/* <div className="mobileScrean">
+                  <div className="shareTypeOption">
+                    <Event htmlColor="#00b4d8" className="shareIcon" />
+                    <select
+                      name="audience"
+                      id="audience"
+                      className="selectShare"
+                    >
+                      <optgroup label="Audience">
+                        <option onClick={showEventHandler}>
+                          Your&nbsp;Events
+                        </option>
+                        <option onClick={showCampusEventHandler}>
+                          Campus&nbsp;Events
+                        </option>
+                        <option onClick={showExploreEventHandler}>
+                          Explore
+                        </option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div> */}
               </div>
 
               <div className="commonLayoutHeaderRight">
@@ -351,9 +381,15 @@ const Event = () => {
                   className="commonLayoutHeading"
                   onClick={showAddEventHandler}
                 >
-                  Create&nbsp;Event
+                +&nbsp;Add
                 </div>
               </div>
+
+              <div className="mobileScreen">
+                <img src="/assets/plus.png" alt=" " className="eventAdd" onClick={showAddEventHandler}/>
+              </div>
+
+
             </div>
 
             {isOpen ? <AddEvent /> : null}

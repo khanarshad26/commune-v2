@@ -1,23 +1,22 @@
-import React, { useState, useEffect, useContext } from 'react';
-import Topbar from "../../components/topbar/Topbar";
+import React, { useEffect   } from 'react';
 import Sidebar from "../../components/sidebar/Sidebar";
 import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
-import Notification from '../../components/notification/Notification';
-import Messenger from '../../components/messenger/Messenger';
 import Share from '../../components/share/Share';
 import "./home.css"
 import axios from 'axios';
 import { useSelector } from 'react-redux'
-import Nav from '../../components/topbar/Nav';
+import { setAllPosts} from '../../state/user.js';
+import { useDispatch } from 'react-redux';
 
 export default function Home({ showMessage }) {
-  const [notification, setNotification] = useState(false);
-  const [messaging, setMessaging] = useState(false);
+  // const [notification, setNotification] = useState(false);
+  // const [messaging, setMessaging] = useState(false);
+  const dispatch = useDispatch();
 
-  const [posts, setPosts] = useState([]);
   const user = useSelector(state => state.user.user);
-  const showMenu = useSelector(state => state.utility.showMenu);
+  // const timelinePosts = useSelector(state => state.user.timelinePosts);
+  const allPosts = useSelector(state => state.user.allPosts);
 
   const RightSide = ({ showMessage }) => {
     // if (notification) return <Notification />;
@@ -25,17 +24,19 @@ export default function Home({ showMessage }) {
     return <Rightbar showMessage={showMessage} />;
   }
 
-  const fetchPosts = async () => {
-    const res = await axios.get(`/api/post/timeline/all/${user?.type}/${user?._id}`);
-    setPosts(
+  const fetchAllPosts = async () => {
+    const res = await axios.get(`/api/post/all/${user?._id}`);
+    dispatch(setAllPosts(
       res.data.sort((p1, p2) => {
         return new Date(p2.createdAt) - new Date(p1.createdAt);
-      })
+      }))
     );
+    localStorage.setItem('allPosts',JSON.stringify(res.data));
   };
-  // 
+
   useEffect(() => {
-    fetchPosts();
+    // fetchPosts();
+    fetchAllPosts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -47,7 +48,7 @@ export default function Home({ showMessage }) {
         </div>
         <div className="shareFeedContainer">
           <Share /> 
-          <Feed posts={posts} />
+          <Feed posts={allPosts} />
         </div>
         <div className="homeRightbar">
           <RightSide showMessage={showMessage}/>

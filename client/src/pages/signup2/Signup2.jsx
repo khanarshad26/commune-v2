@@ -129,7 +129,7 @@ const Signup2 = () => {
               src="assets/google.png"
               width={"20px"}
               height={"20px"}
-              alt=""
+                alt=" "
               className="googleIcon"
             />
             <div className="googleText">Continue&nbsp;with&nbsp;Google</div>
