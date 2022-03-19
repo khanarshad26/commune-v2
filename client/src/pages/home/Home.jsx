@@ -8,11 +8,9 @@ import axios from 'axios';
 import { useSelector } from 'react-redux'
 import { setAllPosts} from '../../state/user.js';
 import { useDispatch } from 'react-redux';
-// import Messenger from '../../components/messenger/Messenger';
-import Messenger1 from '../../components/messenger/Messenger1';
 import { setConnections } from '../../state/connection.js';
 
-export default function Home({ showMessage }) {
+export default function Home() {
   // const [notification, setNotification] = useState(false);
   // const [messaging, setMessaging] = useState(false);
   const dispatch = useDispatch();
@@ -24,10 +22,10 @@ export default function Home({ showMessage }) {
   // const timelinePosts = useSelector((state) => state.user.timelinePosts);
   // const [homePosts, setHomePosts] = useState(timelinePosts);
 
-  const RightSide = ({ showMessage }) => {
+  const RightSide = () => {
     // if (notification) return <Notification />;
     // else if (messaging) return <Messenger />;
-    return <Rightbar showMessage={showMessage} />;
+    return <Rightbar />;
   }
 
   const fetchAllPosts = async () => {

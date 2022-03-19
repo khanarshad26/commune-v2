@@ -20,7 +20,7 @@ import AddCell from "./pages/institute/addCell/AddCell";
 import CellHome from "./pages/cellHome/CellHome";
 import Topbar from "./components/topbar/Topbar.jsx";
 import Sidebar from "./components/sidebar/Sidebar";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Nav from "./components/topbar/Nav.jsx";
 import ProfilePublic from "./pages/profilePublic/ProfilePublic";
 import {
@@ -42,22 +42,22 @@ function App() {
   const user = useSelector(state => state.user.user);
   const showMenu = useSelector(state => state.utility.showMenu);
   const [showChatBox, setShowChatBox] = useState(false);
-  const [state, setState] = useState({
-    prevScrollpos: window.pageYOffset,
-    visible: true
-  })
+  // const [state, setState] = useState({
+  //   prevScrollpos: window.pageYOffset,
+  //   visible: true
+  // })
 
-  const handleScroll = () => {
-    const { prevScrollpos } = state.prevScrollpos;
+  // const handleScroll = () => {
+  //   const { prevScrollpos } = state.prevScrollpos;
   
-    const currentScrollPos = window.pageYOffset;
-    const visible = prevScrollpos > currentScrollPos;
+  //   const currentScrollPos = window.pageYOffset;
+  //   const visible = prevScrollpos > currentScrollPos;
   
-    setState({
-      prevScrollpos: currentScrollPos,
-      visible
-    });
-  };
+  //   setState({
+  //     prevScrollpos: currentScrollPos,
+  //     visible
+  //   });
+  // };
 
   const HomePage = () => {
     return (
@@ -80,7 +80,7 @@ function App() {
     <>
     <ScopedCssBaseline />
       <Router>
-        {user ? <div className={`topbarContainer${state.visible ? "" : " topbarContainer--hidden" }`}><Topbar  /></div> : null}
+        {user ? <div className= "topbarContainer"><Topbar  /></div> : null}
         {showChatBox ? <div className="appMessengerContainer">
         <Messenger1 />
         </div> : null}
