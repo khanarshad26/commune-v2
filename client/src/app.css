@@ -1,3 +1,10 @@
+:root {
+  --nav-item-color: #2d2d2d;
+  --logo-color : #3096f3;
+  --root-background-color : #fcfcfc;
+  --containers-background-color : white;
+}
+
 /* eventCard.css */
 
 
@@ -285,12 +292,19 @@
         /* display: flex; */
         width: 100vw;
     }
+
     .eventCardContainer {
       width: 100vw;
       margin: 1.5%;
+    }
+
+  .publicProfile {
+    display: flex;
+    margin: 0;
+    width: 100vw;
+    flex-direction: column;
+    overflow: hidden;
   }
-
-
     
 }
 
@@ -870,6 +884,91 @@
   position: relative;
   left: 70%;
   top: 0;
+}
+
+}
+
+/* post.css  */
+
+@media only screen and (max-width:425px){
+
+  .morePost{
+   width:60vw;
+  }
+}
+
+.chatIconContainerParent{
+  position: fixed;
+  bottom: 3vh;
+  right: 2.5vw;
+}
+
+.chatIconContainer {
+  width: 30px;
+  height: 30px;
+  /* position: fixed; */
+  border-radius: 50%;
+  background-color: #6ebaff1f;
+  z-index: 1000;
+  background-size: 30px;
+  object-fit: cover;
+  background-repeat: no-repeat;
+}
+
+.themeIconContainerParent{
+  position: fixed;
+  bottom: 3vh;
+  left: 2.5vw;
+}
+
+.themeIconContainer {
+  width: 30px;
+  height: 30px;
+  /* position: fixed; */
+  border-radius: 50%;
+  background-color: #6ebaff1f;
+  z-index: 1000;
+  background-size: 30px;
+  object-fit: cover;
+  background-repeat: no-repeat;
+}
+
+
+.appMessengerContainer{
+  width: 400px;
+  height: 80vh;
+  position: fixed;
+  background: white;
+  bottom: 10vh;
+  right: 0vw;
+}
+
+@media only screen and (max-width:425px){
+
+  .chatIconContainer {
+    width: 40px;
+    height: 40px;
+    /* position: fixed; */
+    border-radius: 50%;
+    background-color: #6ebaff1f;
+    z-index: 999999;
+    background-size: 40px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
+
+.chatIconContainerParent{
+  position: fixed;
+  bottom: 10vh;
+  right: 5vw;
+}
+
+.appMessengerContainer {
+  width: 100vw;
+  /* height: 100vh; */
+  position: fixed;
+  background: white;
+  bottom: -1vh;
 }
 
 }

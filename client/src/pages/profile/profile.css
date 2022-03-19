@@ -33,11 +33,14 @@
     position: relative;
 }
 
-.profileCoverImageTop{
+.profileCoverImageTop {
     width: 93%;
     height: 200px;
     margin: 20px 0px 20px 20px;
     border-radius: 10px;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: 100%;
 }
 
 .profileUserImg{
@@ -88,9 +91,10 @@
     box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
 }
 
-.profileRightBottomright{
+.profileRightBottomright {
     margin-right: 20px;
-    flex: 5;
+    flex: 5 1;
+    margin-top: 20px;
 }
 
 @media only screen and (max-width:425px){
@@ -120,4 +124,15 @@
     display: none;
 }
 
+}
+
+.publicProfile {
+    display: flex;
+    margin: auto;
+    width: 70%;
+    flex-direction: column;
+}
+
+.shareProfile {
+    margin-bottom: 30px;
 }

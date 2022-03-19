@@ -9,6 +9,7 @@ import axios from "axios";
 import PhotoCameraBackIcon from "@mui/icons-material/PhotoCameraBack";
 import { Cancel } from "@material-ui/icons";
 import EventCard from "../../components/eventCard/EventCard.jsx";
+import EventCard1 from "./EventCard1.jsx";
 
 const Event = () => {
   const user = useSelector((state) => state.user.user);
@@ -394,7 +395,12 @@ const Event = () => {
 
             {isOpen ? <AddEvent /> : null}
 
-            {showEvents ? <EventsList eventsList={events} /> : null}
+            {showEvents ?<>
+              <EventCard1 />
+              {/* <EventsList eventsList={events} /> */}
+            
+            </> 
+             : null}
 
             {showCampusEvents ? <EventsList eventsList={campusEvents} /> : null}
 

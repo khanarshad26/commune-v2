@@ -44,11 +44,12 @@
     margin: 20px 0;
 }
 
-.postImg{
-    margin-top: 20px;
-    width: 100%;
-    max-height: 300px;
-    /* object-fit: contain; */
+.postImg {
+  margin-top: 20px;
+  width: 100%;
+  /* max-height: 300px; */
+  /* object-fit: contain; */
+  display: block;
 }
 
 .postBottom{
@@ -81,7 +82,7 @@
 
 /* ____________________________ */
 
-.shareBottom {
+.feedBottom {
   display: flex;
   align-items: center;
   align-content: center;
@@ -185,3 +186,66 @@
   /* width: 15%; */
   margin: 0 2%;
 }
+
+
+.morePost{
+  box-shadow: 0px 0px 16px -8px rgb(0 0 0 / 68%);
+  position: absolute;
+  padding: 10px;
+  transform: translateX(-100%);
+  background-color: white;
+  border-radius: 5px;
+  font-weight: 400;
+}
+
+#morepostIcon{
+  width:20px;
+}
+
+#more1{
+  display: flex;
+  margin: 4% 2%;
+  align-items: center;
+}
+
+#more2{
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+}
+
+.morepostRighttop{
+  font-size: 16px;
+}
+
+.morepostRightBottom{
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.postText{
+  display: -webkit-box;   
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.postTextReadMore{
+  display: -webkit-box;   
+  word-break: break-word;
+  white-space: pre-wrap;
+   /* -webkit-line-clamp: 5;    */
+   -webkit-box-orient: vertical;     
+   overflow: hidden; 
+}
+
+.invisible{
+  display: none;
+}
+
+.readmore{
+  /* display: contents; */
+  font-weight: 300;
+  font-size: smaller;
+}
+
+

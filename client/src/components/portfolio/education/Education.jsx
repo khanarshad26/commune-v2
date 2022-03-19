@@ -2,12 +2,14 @@ import React, { useState, useEffect,    useRef } from "react";
 import "./education.css";
 import { useSelector } from 'react-redux';
 import ModeEditOutlineIcon from "@mui/icons-material/ModeEditOutline";
+import { MoreVert } from "@material-ui/icons";
 import axios from "axios";
 
 const Education = () => {
   const user = useSelector(state => state.user.user);
   const [educations, setEducations] = useState([]);
   const [toggle, setToggle] = useState(false);
+  
 
   const institution = useRef();
   const major = useRef();
@@ -26,6 +28,8 @@ const Education = () => {
       console.log(err);
     }
   };
+
+  console.log(user._id);
 
   useEffect(() => {
     fetchEducation();
@@ -134,17 +138,37 @@ const Education = () => {
   }
 
   const EducationCard = ({ education }) => {
+    const [showModel, setShowModel] = useState(false);
+    const deleteHandler = async() => {
+      try{
+        await axios.delete(`/api/education/${education._id}/${education.userId}`);  
+      }catch(err){
+        console.log(err);
+      }
+    }
     return (
       <>
         <div className="educationCardContainer">
           <img src="/assets/graduate.png" className="educationImage" alt=" " />
-
           <div className="educationCardContainerRight">
             <div className="degree">
               {education.degree + " : " + education.major}
             </div>
             <div className="institution">{education.institution}</div>
           </div>
+          
+          <MoreVert onClick={() => setShowModel(!showModel)}/>
+          {showModel ? <div className="morePost">
+              {/* <div id="more1" className="copyLink">
+                <div id="cpylinkIcon"><img id="morepostIcon" className="cpylinkIcon" src="/assets/images/linkIcon.png" alt=" " /></div>
+                <div id="more2" className="spn"><span className="morepostRighttop" onClick={() => edit}>Edit</span></div>
+              </div> */}
+              <div id="more1" className="hidePost">
+                <img id="morepostIcon" className="hidepostIcon" src="/assets/images/hideIcon.png" alt=" " />
+                <div className="additionalOption" onClick={deleteHandler}>Delete</div>
+              </div>
+            </div> : null}
+      
         </div>
       </>
     );

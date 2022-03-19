@@ -1,5 +1,6 @@
 import "./profile.css";
 import Sidebar from "../../components/sidebar/Sidebar";
+import Share from '../../components/share/Share.jsx';
 import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
 import {setCoverPicture, setProfilePicture, setTimelinePosts} from '../../state/user.js';
@@ -13,8 +14,10 @@ export default function Profile() {
 
   const user = useSelector(state => state.user.user);
   const timelinePosts = useSelector(state => state.user.timelinePosts);
+  // const profilePicture = useSelector(state => state.user.profilePicture);
+  // const [prPic, setPrPic] = useState(user.profilePicture);
 
-    const fetchPosts = async () => {
+    const fetchTimelinePosts = async () => {
     const res = await axios.get(`/api/post/timeline/all/${user?.type}/${user?._id}`);
     dispatch(setTimelinePosts(
       res.data.sort((p1, p2) => {
@@ -27,7 +30,7 @@ export default function Profile() {
   // console.log()
 
   useEffect(() => {
-    fetchPosts();
+    fetchTimelinePosts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -37,8 +40,9 @@ export default function Profile() {
       const fileName = Date.now() + file.name;
       data.append("name", fileName);
       data.append("file", file);
+      // setPrPic("/assets/" + fileName)
       dispatch(setProfilePicture("/assets/" + fileName));
-      console.log(user.profilePicture);
+      console.log("profilePicture",user.profilePicture);
       try {
         await axios.post("/api/upload", data);
       } catch (err) {
@@ -48,6 +52,7 @@ export default function Profile() {
         await axios.put(`/api/user/profilePicture/${user._id}`, {
           profilePicture: fileName,
         });
+        
       } catch (err) {
         console.log(err);
       }
@@ -62,9 +67,11 @@ export default function Profile() {
   const addCoverImg = async () => {
     if (file) {
       const data = new FormData();
-      const fileName = "/assets/"+Date.now() + file.name;
+      const fileName = Date.now() + file.name;
       data.append("name", fileName);
       data.append("file", file);
+      dispatch(setCoverPicture("/assets/" + fileName));
+      console.log("coverPicture",user.coverPicture);
       try {
         await axios.post("/api/upload", data);
       } catch (err) {
@@ -112,11 +119,6 @@ export default function Profile() {
               </div>
 
               <div className="profileUserImg" style={{backgroundImage: `url(${user.profilePicture})` }}>
-                {/* <img
-                  src="/assets/noAvatar.png"
-                  className="profileImg"
-                  alt=" "
-                /> */}
                  <label htmlFor="file">
                   <img
                     src="/assets/plus.png"
@@ -141,25 +143,11 @@ export default function Profile() {
             </div>
           </div>
 
-{/* _______________________________________________nav */}
-{/* 
-<div className="instituteabout">
-              <div className="instituteaboutLeft">
-                <ul className="instituteaboutleftList">
-                  <li >Home </li>
-                  <li >Projects</li>
-                  <li >Portfolio</li>
-                  <li >About</li>
-                </ul>
-              </div>
-              <div className="institutefollow">
-                <button className="institutefollowButton">Follow</button>
-              </div>
-            </div> */}
-
-{/* _______________________________________________nav end */}
           <div className="profileRightBottom">
             <div className="profileRightBottomright">
+              <div className="shareProfile">
+              <Share />
+              </div>  
             <Feed posts={timelinePosts} />
             </div>
             

@@ -5,22 +5,20 @@ import PhotoCameraBackIcon from '@mui/icons-material/PhotoCameraBack';
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { useRef, useState } from "react";
-import {setTimelinePosts} from '../../state/user.js';
+import {setTimelinePosts, setAllPosts} from '../../state/user.js';
 import { useDispatch } from "react-redux";
+import TextareaAutosize from '@mui/base/TextareaAutosize';
 
 
 export default function Share() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
   const timelinePosts = useSelector((state) => state.user.timelinePosts);
+  const allPosts = useSelector(state => state.user.allPosts);
   const desc = useRef();
   const [file, setFile] = useState(null);
   const [openfor, setOpenfor] = useState("Connections");
   const [type, setType] = useState("General");
-
-  const shareHandler = () => {
-
-  }
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -35,17 +33,14 @@ export default function Share() {
       userType: user.type
     };
 
-    // console.log([...timelinePosts, newPost]);
-    // dispatch(setTimelinePosts([...timelinePosts, newPost]));
-
     desc.current.value = "";
     setFile(null);
     setType("General");
     setOpenfor("Connections");
 
+
     if (file) {
       const data = new FormData();
-
       const fileName = Date.now() + file.name;
       data.append("name", fileName);
       data.append("file", file);
@@ -58,14 +53,13 @@ export default function Share() {
     }
     try {
       const res = await axios.post("/api/post/", newPost);
-      dispatch(setTimelinePosts([...timelinePosts, res.data]));
-      console.log(timelinePosts);
+      dispatch(setAllPosts([res.data, ...allPosts]));
+      dispatch(setTimelinePosts([res.data, ...timelinePosts]));
       localStorage.setItem('timelinePosts',JSON.stringify(timelinePosts));
+      localStorage.setItem('allPosts',JSON.stringify(allPosts));
     } catch (err) {
       console.log(err);
     }
-    // dispatch(setTimelinePosts(...timelinePosts, newPost));
-    // localStorage.setItem('timelinePosts',JSON.stringify(timelinePosts));
   };
 
   return (
@@ -77,7 +71,17 @@ export default function Share() {
             src={user?.profilePicture || "/assets/noAvatar.png"}
             alt=" "
           />
-          <input placeholder="Start a post" className="shareInput" ref={desc} />
+          {/* <input placeholder="Start a post" className="shareInput" ref={desc} /> */}
+
+          <TextareaAutosize
+  maxRows={12}
+  aria-label="maximum height"
+  placeholder="Start a post" 
+  className="shareInput" 
+  ref={desc}
+  style={{ width: 200 }}
+/>
+
         </div>
         <hr className="shareHr" />
 
@@ -141,7 +145,7 @@ export default function Share() {
             </select>
           </div>
           <div className="shareOption">
-            <button type="submit" className="shareButton" onClick={shareHandler}>
+            <button type="submit" className="shareButton" >
               Share
             </button>
           </div>

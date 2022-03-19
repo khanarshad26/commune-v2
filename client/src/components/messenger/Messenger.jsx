@@ -1,59 +1,84 @@
-import React from "react";
-import "./messenger.css";
-import { Search } from "@material-ui/icons";
-import Contact from "../contact/Contact";
+import * as React from 'react';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Divider from '@mui/material/Divider';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Avatar from '@mui/material/Avatar';
+import Typography from '@mui/material/Typography';
 
-const Messenger = () => {
-  const [contact, setContact] = React.useState("");
-  const MessengerTemplate = (props) => {
-    return (
-      <>
-        <div className="messageWrapper">
-          <img src="assets/person/4.jpeg" className="messengeImg" alt=" " />
-          <div className="messageInfo1">
-            <div className="msgName"> Arman Khan</div>
-            <div className="msg1">Kya kar rha he bhai</div>
-            <div className="msgTime1">about an hour ago</div>
-          </div>
-        </div>
-      </>
-    );
-  };
-
+export default function AlignItemsList() {
   return (
-    <>
-      <div className="rightbar">
-        <div className="rightbarWrapper">
-          <div className="notificationContainer">
-            <div className="notificationTop">
-              <div className="notificationsHeader">
-                <div className="noficationHeading">Messenger</div>
-                <div className="menuIcon"></div>
-              </div>
+    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+        
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+        </ListItemAvatar>
+        <ListItemText
+          primary="Brunch this weekend?"
+          secondary={
+            <React.Fragment>
+              <Typography
+                sx={{ display: 'inline' }}
+                component="span"
+                variant="body2"
+                color="text.primary"
+              >
+                Ali Connors
+              </Typography>
+              {" — I'll be in your neighborhood doing errands this…"}
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+      <Divider variant="inset" component="li" />
 
-              {/* <div className="readNotifications">
-                <div className="readNotification"> */}
-              <span className="searchbar1">
-                <Search className="searchIcon" />
-                <input placeholder="Search" className="searchInput" />
-              </span>
-            </div>
-            {/* <div className="readNotification">Unread</div> */}
-            {/* </div>
-            </div> */}
-            {contact === "" ? (
-              <Contact contact={contact} setContact={setContact} />
-            ) : (
-              <MessengerTemplate />
-            )}
-            {/* <MessengerTemplate />
-            <MessengerTemplate />
-            <MessengerTemplate /> */}
-          </div>
-        </div>
-      </div>
-    </>
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+        </ListItemAvatar>
+        <ListItemText
+          primary="Summer BBQ"
+          secondary={
+            <React.Fragment>
+              <Typography
+                sx={{ display: 'inline' }}
+                component="span"
+                variant="body2"
+                color="text.primary"
+              >
+                to Scott, Alex, Jennifer
+              </Typography>
+              {" — Wish I could come, but I'm out of town this…"}
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+        </ListItemAvatar>
+        <ListItemText
+          primary="Oui Oui"
+          secondary={
+            <React.Fragment>
+              <Typography
+                sx={{ display: 'inline' }}
+                component="span"
+                variant="body2"
+                color="text.primary"
+              >
+                Sandra Adams
+              </Typography>
+              {' — Do you have Paris recommendations? Have you ever…'}
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+
+    </List>
   );
-};
-
-export default Messenger;
+}

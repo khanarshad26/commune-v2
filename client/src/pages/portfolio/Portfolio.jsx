@@ -6,8 +6,8 @@ import About from "../../components/portfolio/about/About";
 import Education from "../../components/portfolio/education/Education";
 import Experience from "../../components/portfolio/experience/Experience";
 import Project from "../../components/portfolio/project/Project";
-import Achievement from "../../components/portfolio/achievement/Achievement";
-import Interest from "../../components/portfolio/interest/Interest";
+// import Achievement from "../../components/portfolio/achievement/Achievement";
+// import Interest from "../../components/portfolio/interest/Interest";
 import AttachEmailOutlinedIcon from '@mui/icons-material/AttachEmailOutlined';
 import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
 import SendIcon from '@mui/icons-material/Send';
@@ -32,7 +32,7 @@ export default function Portfolio() {
       <div className="portfolio">
         <div className="portfolioTop">
           
-          <img src="/assets/noAvatar.png" className="portfolioTopImage" alt=" "/>
+          <img src={user.profilePicture} className="portfolioTopImage" alt=" "/>
 
           <div className="portfolioTopLeft">
 
@@ -77,8 +77,8 @@ export default function Portfolio() {
             <Education />
             <Experience />
             <Project />
-            <Achievement />
-            <Interest />
+            {/* <Achievement /> */}
+            {/* <Interest /> */}
           </div>
 
         </div>

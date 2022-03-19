@@ -28,7 +28,7 @@ export default function Topbar() {
   // }
 
   return (
-    <div className="topbarContainer">
+    <>
       <div className="topbarLeft">
         <div className="homeMenubar">
         <MenuIcon onClick={() => dispatch(setShowMenu())}/>
@@ -50,10 +50,10 @@ export default function Topbar() {
           <div className="vl"></div>
 
           <Link to='/profile' className="topbarIconItem">
-          <img src={user?.profilePicture} alt=" " className="topbarImg" />
+          <img src={user?.profilePicture || "noAvatar.png"} alt=" " className="topbarImg" />
           </Link>
         </div>
       </div>
-    </div>
+      </>
   );
 }

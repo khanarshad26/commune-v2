@@ -1,6 +1,12 @@
 Heading text background-color ---- #e2e6f6
-color: #3d5a80;
+color: #3096f3;
 eventThumbnailEvent  background-color: #98c1d9;
+
+root bg #fcfcfc
 
 home
 flex : 3 5 3.5
+
+for displaying multiline text
+white-space: pre-wrap;
+word-break: break-word; (for breaking words if they exceed text element width)

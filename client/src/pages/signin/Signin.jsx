@@ -4,29 +4,29 @@ import { Link } from "react-router-dom";
 import {useDispatch} from 'react-redux';
 import { loginCall } from "../../apiCalls";
 import { useState } from "react";
-import { GoogleLogin, GoogleLogout } from 'react-google-login';
-const clientId = "922824643249-iojogc08q3m32q62lnc4aq4ic5vpuu7r.apps.googleusercontent.com";
+// import { GoogleLogin, GoogleLogout } from 'react-google-login';
+// const clientId = "922824643249-iojogc08q3m32q62lnc4aq4ic5vpuu7r.apps.googleusercontent.com";
 
 const Signin = () => {
 
-  const [showloginButton, setShowloginButton] = useState(true);
-  const [showlogoutButton, setShowlogoutButton] = useState(false);
-  const onLoginSuccess = (res) => {
-    console.log('Login Success:', res.profileObj);
-    setShowloginButton(false);
-    setShowlogoutButton(true);
-  };
+  // const [showloginButton, setShowloginButton] = useState(true);
+  // const [showlogoutButton, setShowlogoutButton] = useState(false);
+  // const onLoginSuccess = (res) => {
+  //   console.log('Login Success:', res.profileObj);
+  //   // setShowloginButton(false);
+  //   // setShowlogoutButton(true);
+  // };
 
-  const onLoginFailure = (res) => {
-    console.log('Login Failed:', res);
-  };
+  // const onLoginFailure = (res) => {
+  //   console.log('Login Failed:', res);
+  // };
 
-  const onSignoutSuccess = () => {
-    alert("You have been logged out successfully");
-    console.clear();
-    setShowloginButton(true);
-    setShowlogoutButton(false);
-  };
+  // const onSignoutSuccess = () => {
+  //   alert("You have been logged out successfully");
+  //   console.clear();
+  //   // setShowloginButton(true);
+  //   // setShowlogoutButton(false);
+  // };
 
   const email = useRef();
   const password = useRef();
@@ -99,7 +99,7 @@ const Signin = () => {
           <div className="googleText">Continue&nbsp;with&nbsp;Google</div>
           </div> */}
 
-          <div>
+          {/* <div>
             {showloginButton ?
               <GoogleLogin
                 clientId={clientId}
@@ -118,7 +118,7 @@ const Signin = () => {
               >
               </GoogleLogout> : null
             }
-          </div>
+          </div> */}
 
 
           <div className="loginDirect">

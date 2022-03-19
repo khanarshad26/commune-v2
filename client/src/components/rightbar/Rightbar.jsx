@@ -4,7 +4,7 @@ import EventHome from "../eventHome/EventHome";
 // import Online from "../online/Online";
 import Friends  from "../friends/Friends";
 import Intro from "../intro/Intro";
-import Messenger from '../messenger/Messenger';
+import Messenger from '../messenger/Messenger1';
 
 export default function Rightbar({ profile, showMessage }) {
   const HomeRightbar = () => {

@@ -146,12 +146,13 @@
     display: flex;
     /* margin: 0px 10%; */
 }
-.instituteclubBottomLeft{
+.instituteclubBottomLeft {
     display: flex;
     flex-direction: column;
     width: 35%;
     background-color: white;
     margin-top: 20px;
+    margin-right: 10px;
 }
 .instituteclubBottomRight{
     display: flex;

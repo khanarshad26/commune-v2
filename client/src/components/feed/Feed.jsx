@@ -2,8 +2,10 @@ import React from 'react';
 import Post from '../post/Post.jsx';
 import "./feed.css";
 
-export default function Feed({posts}) {
+const Feed = ({posts}) => {
+  // console.log("feed rendered")
   return (
+    
     <div className="feed">
       <div className="feedWrapper">
         {posts?.map((p) => (
@@ -13,3 +15,5 @@ export default function Feed({posts}) {
     </div>
   );
 }
+
+export default React.memo(Feed);

@@ -1,13 +1,12 @@
-.educationCardContainer{
+.educationCardContainer {
     display: flex;
-    /* flex-direction: column; */
     border-top: 1px solid grey;
-    padding: 5px 0;
+    padding: 10px 0 5px 0;
 }
 
 .educationImage{
-    height: 60px;
-    width: 60px;
+    height: 40px;
+    /* width: 60px; */
     border-radius: 50%;
     margin-right: 10px;
 }
@@ -16,15 +15,17 @@
     display: flex;
     flex-direction: column;
     align-self: center;
+    flex: 50%;
 }
 
 .degree{
-    font-size: larger;
+    font-size: medium;
+    font-weight: 400;
 }
 
-.institution{
-    font-size: medium;
-    font-weight: 300;
+.institution {
+    font-size: 15px;
+    font-weight: 450;
 }
 
 .addEducationContainer{
@@ -73,4 +74,10 @@
     padding: 0 5px;
     font-size: small;
     font-weight: 400;
+}
+
+.additionalOption {
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
 }

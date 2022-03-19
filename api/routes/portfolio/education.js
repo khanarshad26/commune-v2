@@ -30,15 +30,14 @@ router.put('/:id', async(req, res) => {       //Education_id
 })
  
 //delete
-router.delete("/:id", async (req, res) => {
+router.delete("/:id/:userId", async (req, res) => {
     try {
       const education = await Education.findById(req.params.id);
-      const user = await User.findById(req.body.userId);
-      if (education.userId === req.body.userId) {
+      const user = await User.findById(req.params.userId);
+      if (education.userId === req.params.userId) {
         await user.updateOne({ $pull : { 'educations' : education._id }});
         await education.deleteOne();
         res.status(200).json("the education has been deleted");
-  
       } else {
         res.status(403).json("you can delete only your education");
       }

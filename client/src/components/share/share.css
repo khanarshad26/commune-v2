@@ -23,9 +23,10 @@
 }
 
 .shareInput {
- width: 80%;
+ width: 80% !important;
  font-size: medium;
  border: none;
+ white-space: normal
 }
 
 .shareInput:focus {
@@ -38,8 +39,13 @@
 
 .shareBottom {
   display: flex;
-  flex-direction: inherit;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  flex-flow: row;
 }
+
+
 
 .shareOption{
     display: flex;

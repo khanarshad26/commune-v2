@@ -1,8 +1,7 @@
-import "./profile.css";
 import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
 import { useSelector } from 'react-redux';
-import {useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
 
@@ -39,9 +38,9 @@ export default function ProfilePublic() {
 
   return (
     <>
-      <div className="profile1">
+      <div className="publicProfile">
         
-        <div className="profileRight">
+        
           <div className="profileRightTop">
             <div className="profileCover">
 
@@ -79,7 +78,7 @@ export default function ProfilePublic() {
             
             <Rightbar profile />
           </div>
-        </div>
+        
       </div>
     </>
   );

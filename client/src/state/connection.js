@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialStateValue = {
   recommendedConnections : [],
-  connections : [],
+  connections : JSON.parse(localStorage.getItem("connections")) || [],
   connectionRequests : [],
   connectRequests : [],
 };

@@ -1,6 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import produce from 'immer'
-
 
 const initialStateValue = {
   user: JSON.parse(localStorage.getItem("user")) || null,
@@ -9,6 +7,7 @@ const initialStateValue = {
   profilePosts: JSON.parse(localStorage.getItem("profilePosts")) || [],
   timelinePosts: JSON.parse(localStorage.getItem("timelinePosts")) || [],
   allPosts: JSON.parse(localStorage.getItem("allPosts")) || [],
+  profilePicture : ""
 };
 
 const userSlice = createSlice({
@@ -33,34 +32,41 @@ const userSlice = createSlice({
     logout: (state) => {
       state.user = null;
     },
-    setUser: (state, action) => {
-      state.user = action.payload;
-    },
-    setProfileFeeds: (state, action) => {
-      state.profileFeeds = action.payload;
+    setProfilePosts: (state, action) => {
+      return({
+        ...state,
+        profilePosts : action.payload
+      })
     },
     setTimelinePosts: (state, action) => {
-      state.profileFeeds = action.payload;
+      return({
+        ...state,
+        timelinePosts : action.payload
+      })
     },
     setProfilePicture : (state, action) => {
-      // localStorage.setItem('user',JSON.stringify({...state.user, ...{profilePicture : action.payload}}));
-      // return produce(state, draft => {
-      //   draft.user.profilePicture = action.payload;
-      // })
-      // return {
-      //   ...state,
-      //   user : {
-      //     ...state.user,
-      //     profilePicture : action.payload
-      //   }
-      // }
-      state.user = {...state.user, profilePicture : action.payload};
+      return ({
+        ...state,
+        user : {
+          ...state.user,
+          profilePicture : action.payload
+        }
+      })
     },
     setCoverPicture : (state, action) => {
-      state.user.coverPicture = action.payload;
+      return ({
+        ...state,
+        user : {
+          ...state.user,
+          coverPicture : action.payload
+        }
+      })
     },
     setAllPosts : (state, action) => {
-      state.allPosts = action.payload;
+      return({
+        ...state,
+        allPosts : action.payload
+      })
     },
   },
 });
@@ -70,8 +76,7 @@ export const {
   loginSuccess,
   loginFailure,
   logout,
-  setUser,
-  setProfileFeeds,
+  setProfilePosts,
   setTimelinePosts,
   setProfilePicture,
   setCoverPicture,

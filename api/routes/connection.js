@@ -7,7 +7,11 @@ import User from "../models/User.js";
 router.get('/:id', async (req, res) => {  //currentUser_id
     try{
         const currentUser = await User.findById(req.params.id);
-        const connections = currentUser.connections;
+        const connections = await Promise.all(
+          currentUser.connections.map((userId) => {
+            return User.findById(userId);
+          })
+      );
         res.status(200).json(connections);
     }catch(err){
         res.status(500).json(err);

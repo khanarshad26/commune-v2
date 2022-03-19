@@ -32,6 +32,8 @@ import {
 import Institute from "./pages/institute/Institute";
 import { useSelector } from 'react-redux';
 import './app.css';
+import ScopedCssBaseline from '@mui/material/ScopedCssBaseline';
+import Messenger1 from "./components/messenger/Messenger1";
 
 
 
@@ -39,28 +41,56 @@ import './app.css';
 function App() {
   const user = useSelector(state => state.user.user);
   const showMenu = useSelector(state => state.utility.showMenu);
-  const [showMessage, setShowMessage] = useState(false);
+  const [showChatBox, setShowChatBox] = useState(false);
+  const [state, setState] = useState({
+    prevScrollpos: window.pageYOffset,
+    visible: true
+  })
 
-  useEffect(() => {
-    localStorage.setItem('user',JSON.stringify(user));
-    console.log("app user is saving in local host due to user data change or app rerendering due to other reasons");
-  },[user])
+  const handleScroll = () => {
+    const { prevScrollpos } = state.prevScrollpos;
+  
+    const currentScrollPos = window.pageYOffset;
+    const visible = prevScrollpos > currentScrollPos;
+  
+    setState({
+      prevScrollpos: currentScrollPos,
+      visible
+    });
+  };
 
   const HomePage = () => {
     return (
       <>
-        {(user.type === "Student" || user.type === "Faculty") ? <Home showMessage={showMessage}/> : null}
+        {(user.type === "Student" || user.type === "Faculty") ? <Home /> : null}
         {(user.type === "Club" || user.type === "Association") ? <CellHome /> : null}
         {(user.type === "Institute") ? <Institute /> : null}
       </>
     );
   }
 
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   }
+  // },[state])
+
   return (
     <>
-
+    <ScopedCssBaseline />
       <Router>
-        {user ? <Topbar setShowMessage={setShowMessage} showMessage={showMessage} /> : null}
+        {user ? <div className={`topbarContainer${state.visible ? "" : " topbarContainer--hidden" }`}><Topbar  /></div> : null}
+        {showChatBox ? <div className="appMessengerContainer">
+        <Messenger1 />
+        </div> : null}
+       {user && <div className="chatIconContainerParent" onClick={() => setShowChatBox(!showChatBox)} >
+        <div className="chatIconContainer" style={{backgroundImage : 'url(/assets/chatIcon.png)'}} onClick={() => setShowChatBox(!showChatBox)}></div>
+        </div>}
+        
+        <div className="themeIconContainerParent">
+        <div className="themeIconContainer" style={{backgroundImage : 'url(/assets/themeIcon.png)'}} onClick={() => setShowChatBox(!showChatBox)}></div>
+        </div>
         {showMenu ? <div className="mobileScreenSidebar" >
         <Sidebar />
         </div> : null}
@@ -68,7 +98,7 @@ function App() {
           <Nav />
         </div> : null}
         <Routes>
-          <Route exact path="/" element={user ? <HomePage showMessage={showMessage}/> : <LandingPage />} ></Route>
+          <Route exact path="/" element={user ? <HomePage /> : <LandingPage />} ></Route>
           <Route path="/login" element={user ? <Navigate to="/" /> : <Signin />} ></Route>
           <Route path="/register" element={user ? <Navigate to="/" /> : <Signup />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
@@ -97,4 +127,4 @@ function App() {
   );
 }
 
-export default App;
+export default React.memo(App);
